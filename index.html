@@ -4,28 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="#" type="image/x-icon" />
-    <link rel="stylesheet" href="#" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
     <title>Lucas Aguiar || Portfólio</title>
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="header">
         <h2>Lucas Aguiar</h2>
-        <nav>
-          <button id="switchThemeBtn">
-            <img src="#" alt="Luzes" />
-          </button>
-          <a href="#">Sobre Mim</a>
-          <a href="#">Projetos</a>
-          <a href="#">Contato</a>
+        <button id="switchThemeBtn" class="switchThemeBtn">
+          <img
+            src="./assets/images/icons/switchThemeIcon.png"
+            alt="Luzes"
+            class="switchIcon"
+          />
+        </button>
+        <nav class="navbar">
+          <div class="menu-icon">
+            <i class="fa fa-bars"></i>
+          </div>
+          <ul class="navMenu">
+            <li><a href="#about">Sobre mim</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
         </nav>
       </header>
       <main class="myContainer">
-        <img src="#" alt="Imagem de perfil" />
-        <h1>Olá, mundo!</h1>
-        <span>Eu sou o Lucas</span>
-        <span>Desenvolvedor web</span>
+        <img
+          src="./assets/images/general/79578280_2614962878626185_3032145064416509952_n.jpg"
+          alt="Imagem de perfil"
+          class="perfilImage"
+        />
+        <div class="myContainerText">
+          <h1>Olá, mundo!</h1>
+          <span>Eu sou o Lucas</span>
+          <br />
+          <span>Desenvolvedor web</span>
+        </div>
+
         <article class="myContainerContacts">
           <a href="#">Meu Currículo</a>
           <a href="#">LinkedIn</a>
@@ -116,6 +137,6 @@
       </footer>
     </div>
 
-    <script src="#"></script>
+    <script src="./assets/script/script.js"></script>
   </body>
 </html>
