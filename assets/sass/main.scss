@@ -22,7 +22,7 @@ html {
   min-height: 100vh;
 
   .header {
-    padding: 15px 5px 0 5px;
+    padding: 15px 5px 10px 5px;
     display: flex;
     justify-content: space-between;
     background-color: #508650;
@@ -51,13 +51,8 @@ html {
         display: none;
       }
       .navMenu.active {
-        margin: 0 15rem 0 0;
-        padding: 5px;
-        width: 100vw;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 15px;
+        width: 100%;
+        display: block;
         list-style: none;
         font-size: 13pt;
         background-color: #b9c9bb52;
@@ -87,7 +82,7 @@ html {
   }
 
   .myContainer {
-    padding-top: 7rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +92,25 @@ html {
       border: 3px outset #508650;
       border-radius: 80px;
     }
-    .myContainerText {
+    .space {
+      height: 40px;
+    }
+    .myContainerContacts {
+      padding: 30px;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 45px;
+      a {
+        padding: 12px;
+        width: 9rem;
+        text-align: center;
+        color: #0e0e0e;
+        text-decoration: none;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
     }
   }
 }
