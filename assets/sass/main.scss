@@ -8,13 +8,24 @@ html {
   scroll-behavior: smooth;
 }
 
+.isLight {
+  color: #0e0e0e;
+  background-color: #f0f8ff;
+}
+
+.isDark {
+  color: #f0f8ff;
+  background-color: #292929;
+}
+
 .container {
   min-height: 100vh;
 
   .header {
-    padding: 25px 5px 10px 5px;
+    padding: 15px 5px 0 5px;
     display: flex;
     justify-content: space-between;
+    background-color: #508650;
 
     h2 {
       font-size: 15pt;
@@ -42,15 +53,14 @@ html {
       .navMenu.active {
         margin: 0 15rem 0 0;
         padding: 5px;
-        width: 300px;
+        width: 100vw;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         gap: 15px;
         list-style: none;
         font-size: 13pt;
-        background-color: #233f23bd;
-        border-radius: 20px;
+        background-color: #b9c9bb52;
         li {
           margin: 15px 0 10px 0;
           a {
@@ -73,11 +83,11 @@ html {
     transition: background-color 0.4s ease;
   }
   .fixed-header-background {
-    background-color: #6cad6cbb;
+    background-color: #419241c0;
   }
 
   .myContainer {
-    margin-top: 8rem;
+    padding-top: 7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
