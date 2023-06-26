@@ -92,8 +92,23 @@ html {
       border: 3px outset #508650;
       border-radius: 80px;
     }
-    .space {
-      height: 40px;
+    #typing {
+      text-align: center;
+      &::after {
+        content: "|";
+        margin-left: 5px;
+        opacity: 1;
+        animation: blink 0.9s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
     }
     .myContainerContacts {
       padding: 30px;

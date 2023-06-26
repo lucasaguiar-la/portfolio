@@ -89,8 +89,22 @@ html {
   border: 3px outset #508650;
   border-radius: 80px;
 }
-.container .myContainer .space {
-  height: 40px;
+.container .myContainer #typing {
+  text-align: center;
+}
+.container .myContainer #typing::after {
+  content: "|";
+  margin-left: 5px;
+  opacity: 1;
+  animation: blink 0.9s infinite;
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 .container .myContainer .myContainerContacts {
   padding: 30px;

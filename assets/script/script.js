@@ -31,20 +31,16 @@ window.addEventListener("scroll", function () {
 });
 
 // Escrita dinâmica
-const titleElement = document.getElementById("typing-effect");
-const text = " Olá, mundo!";
-let index = 0;
+const title = document.querySelector("#typing");
 
-const typeText = () =>
-  index < text.length
-    ? ((titleElement.textContent += text.charAt(index++)),
-      setTimeout(typeText, 100))
-    : setTimeout(() => eraseText(), 2000);
-
-const eraseText = () =>
-  index >= 0
-    ? ((titleElement.textContent = text.substring(0, index--)),
-      setTimeout(eraseText, 100))
-    : setTimeout(typeText, 100);
-
-typeText();
+function typing(element) {
+  const textArray = element.innerText.split("");
+  element.innerText = "";
+  textArray.forEach((letter, i) => {
+    setTimeout(() => (element.innerText += letter), 75 * i);
+    setInterval(() => {
+      typing(title);
+    }, 4000);
+  });
+}
+typing(title);
