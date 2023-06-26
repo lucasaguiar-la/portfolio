@@ -22,20 +22,21 @@ html {
   min-height: 100vh;
 
   .header {
-    padding: 15px 5px 10px 5px;
+    padding: 15px 15px 10px 25px;
     display: flex;
     justify-content: space-between;
     background-color: #508650;
 
     h2 {
+      padding-left: 15px;
       font-size: 15pt;
     }
     .switchThemeBtn {
       width: 50px;
       height: 30px;
-      border: 2px solid black;
+      border: none;
       border-radius: 20px;
-      background-color: transparent;
+      background-color: #29292969;
       .switchIcon {
         width: 20px;
         height: 20px;
@@ -47,14 +48,23 @@ html {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      .menu-icon {
+        width: 35px;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: #29292969;
+      }
       .navMenu {
         display: none;
       }
       .navMenu.active {
-        width: 100%;
+        margin: 0.6rem 8rem 0 0;
+        padding: 5px;
+        width: 60vw;
         display: block;
         list-style: none;
         font-size: 13pt;
+        border-radius: 10px;
         background-color: #b9c9bb52;
         li {
           margin: 15px 0 10px 0;
@@ -83,16 +93,22 @@ html {
 
   .myContainer {
     padding-top: 2rem;
+    height: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #eef3a759;
 
     .perfilImage {
-      width: 150px;
+      margin: 2rem 0 1rem 0;
+      width: 210px;
       border: 3px outset #508650;
-      border-radius: 80px;
+      border-radius: 100%;
+      box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.507);
     }
     #typing {
+      margin-bottom: 1rem;
+      font-size: 30pt;
       text-align: center;
       &::after {
         content: "|";
@@ -110,7 +126,13 @@ html {
         }
       }
     }
+    .myContainerText {
+      width: 90vw;
+      text-align: center;
+      font-size: 14pt;
+    }
     .myContainerContacts {
+      margin-top: 1rem;
       padding: 30px;
       width: 100vw;
       display: flex;
@@ -118,7 +140,7 @@ html {
       align-items: center;
       gap: 45px;
       a {
-        padding: 12px;
+        padding: 17px;
         width: 9rem;
         text-align: center;
         color: #0e0e0e;
@@ -127,5 +149,21 @@ html {
         border-radius: 10px;
       }
     }
+    .cvDownload {
+      padding: 17px;
+      width: 13rem;
+      text-align: center;
+      border: 2px solid black;
+      border-radius: 10px;
+      a {
+        text-decoration: none;
+        color: #0e0e0e;
+      }
+    }
+  }
+
+  .aboutMeWrapper {
+    margin-top: 2rem;
+    padding: 15px;
   }
 }

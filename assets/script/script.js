@@ -13,6 +13,7 @@ const menu = document.querySelector(".navMenu");
 
 menuIcon.addEventListener("click", () => {
   menu.classList.toggle("active");
+  menuIcon.classList.toggle("open");
 });
 
 // Menu fixo
@@ -37,7 +38,7 @@ function typing(element) {
   const textArray = element.innerText.split("");
   element.innerText = "";
   textArray.forEach((letter, i) => {
-    setTimeout(() => (element.innerText += letter), 75 * i);
+    setTimeout(() => (element.innerText += letter), 85 * i);
     setInterval(() => {
       typing(title);
     }, 4000);
