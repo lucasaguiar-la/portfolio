@@ -1,4 +1,4 @@
-// Tema claro e escuro
+/*Tema claro e escuro
 function switchTheme() {
   document.body.classList.toggle("isLight");
   document.body.classList.toggle("isDark");
@@ -6,42 +6,14 @@ function switchTheme() {
 document
   .getElementById("switchThemeBtn")
   .addEventListener("click", switchTheme);
+*/
+let buttonMenu = document.querySelector(".buttonMenu");
 
-// Menu lateral
-const menuIcon = document.querySelector(".menu-icon");
-const menu = document.querySelector(".navMenu");
-
-menuIcon.addEventListener("click", () => {
+buttonMenu.addEventListener("click", (event) => {
+  let menu = document.querySelector(".menu");
+  let hamburguer = document.querySelector("#hamburguer");
   menu.classList.toggle("active");
-  menuIcon.classList.toggle("open");
+  hamburguer.classList.toggle("active");
+  const active = menu.classList.contains("active");
+  event.currentTarget.setAtribute("aria-expanded", active);
 });
-
-// Menu fixo
-window.addEventListener("scroll", function () {
-  let headerNav = document.querySelector("header");
-
-  if (window.scrollY > 0) {
-    headerNav.classList.add(
-      "fixed-header",
-      "fixed-header-transition",
-      "fixed-header-background"
-    );
-  } else {
-    headerNav.classList.remove("fixed-header-background");
-  }
-});
-
-// Escrita dinâmica
-const title = document.querySelector("#typing");
-
-function typing(element) {
-  const textArray = element.innerText.split("");
-  element.innerText = "";
-  textArray.forEach((letter, i) => {
-    setTimeout(() => (element.innerText += letter), 85 * i);
-    setInterval(() => {
-      typing(title);
-    }, 4000);
-  });
-}
-typing(title);

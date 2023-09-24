@@ -3,152 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Lucas Aguiar || Portfólio</title>
   </head>
   <body class="isLight">
     <div class="container">
       <header id="fixedHeader" class="header">
-        <button id="switchThemeBtn" class="switchThemeBtn">
-          <img
-            src="./assets/images/icons/switchThemeIcon.png"
-            alt="Luzes"
-            class="switchIcon"
-          />
-        </button>
-        <h2>Lucas Aguiar</h2>
+        <div class="logoHeader">
+          <h1 class="logo" href="index.html">Lucas Aguiar</h1>
+        </div>
         <nav class="navbar">
-          <img
-            class="menu-icon"
-            src="./assets/images/icons/menuIcon.png"
-            alt="Menu lateral"
-          />
-          <ul class="navMenu">
-            <li><a href="#about">Sobre mim</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </ul>
+          <div>
+            <button class="buttonMenu" aria-expanded="false">
+              Menu
+              <span id="hamburguer"></span>
+            </button>
+            <ul class="menu">
+              <li class="fix">
+                <a href="#about" class="menuElements">Resumo</a>
+              </li>
+              <li class="fix">
+                <a href="#projects" class="menuElements">Projetos</a>
+              </li>
+              <li class="fix">
+                <a href="#contact" class="menuElements">Contato</a>
+              </li>
+              <div class="switchButtons">
+                <button id="switchThemeBtn" class="switchThemeBtn">Tema</button>
+                <button id="switchLanguageBtn" class="switchLanguageBtn">
+                  Idioma
+                </button>
+              </div>
+            </ul>
+          </div>
         </nav>
       </header>
-
-      <main class="myContainer">
-        <img
-          src="./assets/images/general/79578280_2614962878626185_3032145064416509952_n.jpg"
-          alt="Imagem de perfil"
-          class="perfilImage"
-        />
-        <h1 id="typing">Olá, mundo!</h1>
-        <div class="myContainerText">
-          <span>Eu sou o Lucas,</span>
-          <br />
-          <span>Desenvolvedor web</span>
-        </div>
-        <article class="myContainerContacts">
-          <a
-            href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/Lucas-Aguiar-La" target="_blank"
-            >GitHub</a
-          >
-        </article>
-        <article class="cvDownload">
-          <a
-            href="./assets/images/general/Lucas Aguiar CV.pdf"
-            download="Lucas Aguiar CV.pdf"
-            >Download Currículo</a
-          >
-        </article>
-      </main>
-      <section class="aboutMeWrapper">
-        <div class="aboutMeCard">
-          <h3>Sobre mim</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
-            obcaecati perferendis delectus dignissimos, eligendi, quisquam
-            aliquam cupiditate esse a suscipit cum doloribus iste nesciunt
-            recusandae?
-          </p>
-        </div>
-        <div class="aboutMeCard">
-          <h3>Sobre mim</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
-            obcaecati perferendis delectus dignissimos, eligendi, quisquam
-            aliquam cupiditate esse a suscipit cum doloribus.
-          </p>
-        </div>
-        <div class="aboutMeCard">
-          <h3>Sobre mim</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
-            obcaecati perferendis delectus dignissimos, eligendi.
-          </p>
-        </div>
-        <article class="technologies">
-          <img src="./assets/images/icons/html5Icon.png" alt="HMTL5" />
-          <img src="./assets/images/icons/css3Icon.png" alt="CSS3" />
-          <img src="./assets/images/icons/jsIcon.png" alt="JS" />
-          <img src="./assets/images/icons/sassIcon.png" alt="SASS" />
-          <img src="./assets/images/icons/gitIcon.png" alt="GIT" />
-          <img src="./assets/images/icons/linuxIcon.png" alt="LINUX" />
-        </article>
-      </section>
-      <section class="porjects">
-        <div class="projectCard">
-          <img src="#" alt="Imagem do projeto" />
-          <p class="projectDescription">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-            consequatur ducimus voluptas, modi expedita voluptatibus consectetur
-            vero?
-          </p>
-          <span class="projectTechnologies">
-            <img src="#" alt="Tecnologia" />
-          </span>
-        </div>
-        <div class="projectCard">
-          <img src="#" alt="Imagem do projeto" />
-          <p class="projectDescription">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-            consequatur ducimus voluptas, modi expedita voluptatibus consectetur
-            vero?
-          </p>
-          <span class="projectTechnologies">
-            <img src="#" alt="Tecnologia" />
-          </span>
-        </div>
-        <div class="projectCard">
-          <img src="#" alt="Imagem do projeto" />
-          <p class="projectDescription">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-            consequatur ducimus voluptas, modi expedita voluptatibus consectetur
-            vero?
-          </p>
-          <span class="projectTechnologies">
-            <img src="#" alt="Tecnologia" />
-          </span>
-        </div>
-      </section>
-      <footer class="contacts">
-        <h3>+55 (11) 9 7454-9205</h3>
-        <h3>lucas.aguiar.ads@gmail.com</h3>
-        <a
-          href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/"
-          target="_blank"
-          >LinkedIn</a
-        >
-        <br />
-        <a href="https://github.com/Lucas-Aguiar-La" target="_blank">
-          GitHub
-        </a>
-      </footer>
     </div>
 
     <script src="./assets/script/script.js"></script>
