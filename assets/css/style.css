@@ -93,6 +93,7 @@ html {
   overflow-y: hidden;
 }
 .menu.active {
+  position: fixed;
   height: calc(100vh - 55px);
   width: 100%;
   visibility: visible;
@@ -117,9 +118,9 @@ html {
   justify-content: space-around;
 }
 
-/*=============================[SECTIONS]=============================*/
+/*=============================[SESSÃO DE RESUMO]=============================*/
 
-.profileContainer {
+.pictureContainer {
   margin: 1rem auto;
   width: 200px;
   height: 200px;
@@ -163,3 +164,5 @@ html {
   display: flex;
   justify-content: space-evenly;
 }
+
+/*=============================[SESSÃO DO CARROSEL]=============================*/
