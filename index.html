@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/general.css" />
+    <link rel="stylesheet" href="./assets/css/menu.css" />
+    <link rel="stylesheet" href="./assets/css/slider.css" />
+
+    <script src="./assets/scripts/menu.js" defer></script>
+    <script src="./assets/scripts/switchs.js" defer></script>
+    <script src="./assets/scripts/typeWriter.js" defer></script>
+    <script src="./assets/scripts/slider.js" defer></script>
     <title>Lucas Aguiar || Portfólio</title>
   </head>
   <body class="isLight">
@@ -61,56 +68,93 @@
           </div>
         </div>
       </section>
+      <h2>Tecnologias fortes:</h2>
       <section class="carouselContainer">
-        <h2>Tecnologias que utilizo:</h2>
-        <div class="carousel">
-          <img
-            src="./assets/images/icons/html5-icon.png"
-            alt="HTML5"
-            class="carouselImage"
-          />
-          <img
-            src="./assets/images/icons/css3-icon.png"
-            alt="CSS3"
-            class="carouselImage"
-          />
-          <img
-            src="./assets/images/icons/js-icon.png"
-            alt="JavaScript"
-            class="carouselImage"
-          />
-          <img
-            src="./assets/images/icons/php-icon.png"
-            alt="PHP"
-            class="carouselImage"
-          />
-          <img
-            src="./assets/images/icons/git-icon.png"
-            alt="Git"
-            class="carouselImage"
-          />
-          <img
-            src="./assets/images/icons/database-icon.png"
-            alt="Banco de Dados"
-            class="carouselImage"
-          />
-          <img
-            src="./assets/images/icons/linux-icon.png"
-            alt="Linux"
-            class="carouselImage"
-          />
-          <img
-            src="./assets/images/icons/sass-icon.png"
-            alt="Sass"
-            class="carouselImage"
-          />
+        <div class="slider">
+          <div class="sliderContent">
+            <input type="radio" name="btnRadio" id="radio1" value="HTML5" />
+            <input type="radio" name="btnRadio" id="radio2" value="CSS3" />
+            <input type="radio" name="btnRadio" id="radio3" />
+            <input type="radio" name="btnRadio" id="radio4" />
+            <input type="radio" name="btnRadio" id="radio5" />
+
+            <div class="sliderBox first">
+              <img
+                src="./assets/images/icons/html5-icon.png"
+                alt="HTML5"
+                class="sliderImage"
+              />
+            </div>
+
+            <div class="sliderBox">
+              <img
+                src="./assets/images/icons/css3-icon.png"
+                alt="CSS3"
+                class="sliderImage"
+              />
+            </div>
+
+            <div class="sliderBox">
+              <img
+                src="./assets/images/icons/js-icon.png"
+                alt="JavaScript"
+                class="sliderImage"
+              />
+            </div>
+
+            <div class="sliderBox">
+              <img
+                src="./assets/images/icons/git-icon.png"
+                alt="Git"
+                class="sliderImage"
+              />
+            </div>
+
+            <div class="sliderBox">
+              <img
+                src="./assets/images/icons/sass-icon.png"
+                alt="Sass"
+                class="sliderImage"
+              />
+            </div>
+
+            <div class="navAuto">
+              <div class="autoBtn1"></div>
+              <div class="autoBtn2"></div>
+              <div class="autoBtn3"></div>
+              <div class="autoBtn4"></div>
+              <div class="autoBtn5"></div>
+            </div>
+            <div class="navManual">
+              <label for="radio1" class="manualBtn"></label>
+              <label for="radio2" class="manualBtn"></label>
+              <label for="radio3" class="manualBtn"></label>
+              <label for="radio4" class="manualBtn"></label>
+              <label for="radio5" class="manualBtn"></label>
+            </div>
+            <div class="result"></div>
+          </div>
         </div>
       </section>
-    </div>
 
-    <script src="./assets/scripts/menu.js"></script>
-    <script src="./assets/scripts/switchs.js"></script>
-    <script src="./assets/scripts/typeWriter.js"></script>
-    <script src="./assets/scripts/carousel.js"></script>
+      <div class="badges">
+        <h2>Tecnologias em estudo:</h2>
+        <img
+          src="./assets/images/icons/php-icon.png"
+          alt="PHP"
+          class="studyImage"
+        />
+        <img
+          src="./assets/images/icons/database-icon.png"
+          alt="Banco de Dados"
+          class="studyImage"
+        />
+        <img
+          src="./assets/images/icons/linux-icon.png"
+          alt="Linux"
+          class="studyImage"
+        />
+      </div>
+    </div>
   </body>
 </html>

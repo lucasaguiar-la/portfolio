@@ -1,0 +1,94 @@
+.carouselContainer {
+  padding: 1px 0 30px 0;
+  background-color: antiquewhite;
+}
+
+.slider {
+  margin: 2rem auto;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+}
+
+.sliderContent {
+  width: 110px;
+  height: 110px;
+  display: flex;
+}
+
+.sliderContent input {
+  display: none;
+}
+
+.sliderBox {
+  width: 100px;
+  position: relative;
+  transition: 0.8s;
+}
+
+.sliderImage {
+  width: 90px;
+  padding: 5px;
+}
+
+.navManual {
+  position: absolute;
+  width: 90px;
+  margin-top: 110px;
+  display: flex;
+  justify-content: center;
+}
+.manualBtn {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.manualBtn:not(:last-child),
+.navAuto div:not(:last-child) {
+  margin-right: 35px;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0%;
+}
+#radio2:checked ~ .first {
+  margin-left: -80%;
+}
+#radio3:checked ~ .first {
+  margin-left: -160%;
+}
+#radio4:checked ~ .first {
+  margin-left: -245%;
+}
+#radio5:checked ~ .first {
+  margin-left: -360%;
+}
+
+.navAuto div {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.navAuto {
+  position: absolute;
+  width: 90px;
+  margin-top: 34%;
+  display: flex;
+  justify-content: center;
+}
+
+#radio1:checked ~ .navAuto .autoBtn1,
+#radio2:checked ~ .navAuto .autoBtn2,
+#radio3:checked ~ .navAuto .autoBtn3,
+#radio4:checked ~ .navAuto .autoBtn4,
+#radio5:checked ~ .navAuto .autoBtn5 {
+  background-color: black;
+}
+
+.badges {
+  margin-top: 3rem;
+}
