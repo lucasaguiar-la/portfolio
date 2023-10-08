@@ -1,3 +1,5 @@
+/* Carrossel de imagem */
+
 .carouselContainer {
   padding: 1px 0 30px 0;
   background-color: antiquewhite;
@@ -87,8 +89,4 @@
 #radio4:checked ~ .navAuto .autoBtn4,
 #radio5:checked ~ .navAuto .autoBtn5 {
   background-color: black;
-}
-
-.badges {
-  margin-top: 3rem;
 }

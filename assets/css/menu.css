@@ -19,7 +19,7 @@
   height: 2px;
   margin-top: 5px;
   background-color: currentColor;
-  transition: 0.3s;
+  transition: 0.7s;
   position: relative;
 }
 #hamburguer.active {
@@ -38,17 +38,18 @@
   width: 100%;
   padding: 1rem;
   display: block;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 55px;
   background-color: #dce9f5f1;
   list-style: none;
-  z-index: 1000;
+  z-index: 99;
   transition: 0.6s;
   visibility: hidden;
   overflow-y: hidden;
 }
 .menu.active {
+  z-index: 10;
   position: fixed;
   height: calc(100vh - 55px);
   width: 100%;

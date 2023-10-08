@@ -20,8 +20,3 @@ function next() {
 stop.addEventListener("click", () => {
   clearInterval(slider);
 });
-
-let result = document.querySelector(".result");
-
-let valor = document.querySelector('input[name="btnRadio"]').value;
-console.log(valor);
