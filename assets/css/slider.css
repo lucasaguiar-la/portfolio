@@ -1,14 +1,9 @@
 /* Carrossel de imagem */
 
-.carouselContainer {
-  padding: 1px 0 30px 0;
-  background-color: antiquewhite;
-}
-
 .slider {
   margin: 2rem auto;
   width: 90px;
-  height: 90px;
+  height: 120px;
   overflow: hidden;
 }
 
@@ -25,7 +20,9 @@
 .sliderBox {
   width: 100px;
   position: relative;
+  text-align: center;
   transition: 0.8s;
+  z-index: -1;
 }
 
 .sliderImage {
@@ -36,16 +33,18 @@
 .navManual {
   position: absolute;
   width: 90px;
-  margin-top: 110px;
+  margin-top: 130px;
   display: flex;
   justify-content: center;
+  z-index: -1;
 }
 .manualBtn {
   border: 1px solid black;
-  padding: 5px;
+  padding: 8px;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s;
+  z-index: -1;
 }
 .manualBtn:not(:last-child),
 .navAuto div:not(:last-child) {
@@ -65,12 +64,12 @@
   margin-left: -245%;
 }
 #radio5:checked ~ .first {
-  margin-left: -360%;
+  margin-left: -365%;
 }
 
 .navAuto div {
   border: 1px solid black;
-  padding: 5px;
+  padding: 8px;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s;
@@ -78,9 +77,10 @@
 .navAuto {
   position: absolute;
   width: 90px;
-  margin-top: 34%;
+  margin-top: 130px;
   display: flex;
   justify-content: center;
+  z-index: -1;
 }
 
 #radio1:checked ~ .navAuto .autoBtn1,
