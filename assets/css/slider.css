@@ -1,92 +1,35 @@
 /* Carrossel de imagem */
 
 .slider {
+  display: flex;
+  gap: 20px;
   margin: 2rem auto;
-  width: 90px;
-  height: 120px;
-  overflow: hidden;
+  width: 100%;
+  height: 450px;
+  /* overflow: hidden; */
 }
-
-.sliderContent {
-  width: 110px;
-  height: 110px;
+.card {
+  margin: 2rem auto;
+  padding: 20px;
+  width: 220px;
+  height: 380px;
   display: flex;
-}
-
-.sliderContent input {
-  display: none;
-}
-
-.sliderBox {
-  width: 100px;
-  position: relative;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  transition: 0.8s;
-  z-index: -1;
+  color: #f4f4f4;
+  border-radius: 20px;
+  background-color: #202020a8;
+  box-shadow: 2px 2px 5px;
 }
-
-.sliderImage {
-  width: 90px;
-  padding: 5px;
+.card h3 {
+  margin: 10px;
 }
-
-.navManual {
-  position: absolute;
-  width: 90px;
-  margin-top: 130px;
-  display: flex;
-  justify-content: center;
-  z-index: -1;
+.card p {
+  font-weight: 300;
 }
-.manualBtn {
-  border: 1px solid black;
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-  z-index: -1;
-}
-.manualBtn:not(:last-child),
-.navAuto div:not(:last-child) {
-  margin-right: 35px;
-}
-
-#radio1:checked ~ .first {
-  margin-left: 0%;
-}
-#radio2:checked ~ .first {
-  margin-left: -80%;
-}
-#radio3:checked ~ .first {
-  margin-left: -160%;
-}
-#radio4:checked ~ .first {
-  margin-left: -245%;
-}
-#radio5:checked ~ .first {
-  margin-left: -365%;
-}
-
-.navAuto div {
-  border: 1px solid black;
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.navAuto {
-  position: absolute;
-  width: 90px;
-  margin-top: 130px;
-  display: flex;
-  justify-content: center;
-  z-index: -1;
-}
-
-#radio1:checked ~ .navAuto .autoBtn1,
-#radio2:checked ~ .navAuto .autoBtn2,
-#radio3:checked ~ .navAuto .autoBtn3,
-#radio4:checked ~ .navAuto .autoBtn4,
-#radio5:checked ~ .navAuto .autoBtn5 {
-  background-color: black;
+.cardIcon {
+  width: 130px;
+  margin: 10px;
+  padding: 10px;
 }

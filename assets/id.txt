@@ -1,0 +1,7 @@
+Paleta de cores:
+
+#276955 (Verde)
+#12263A (Azul)
+#FF5500 (Laranja)
+#F4F4F4 (Branco)
+#202020 (Preto)

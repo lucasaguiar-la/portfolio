@@ -1,13 +1,13 @@
 @font-face {
-  font-family: Roboto;
-  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: Montserrat;
 }
 
 html {
@@ -16,6 +16,9 @@ html {
 
 h2 {
   margin-top: 5rem;
+  text-align: center;
+  font-size: 25pt;
+  letter-spacing: 2px;
 }
 
 /*==============================[HEADER]==============================*/
@@ -27,7 +30,7 @@ h2 {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  background-color: #276955;
+  background-color: #002218f8;
   box-shadow: 1px 1px 5px #000000b9;
 }
 
@@ -41,6 +44,11 @@ h2 {
 .logo {
   width: 170px;
 }
+.logoEscuro {
+  display: none;
+  position: absolute;
+  width: 170px;
+}
 
 .navbar {
   display: flex;
@@ -51,12 +59,13 @@ h2 {
 /*=============================[SESSÃO DE RESUMO]=============================*/
 
 .resume {
-  padding-top: 5rem;
-  font-weight: 300;
+  padding: 5rem 1.5rem 0 1.5rem;
+  font-weight: 400;
+  color: black;
 }
 
 .pictureContainer {
-  margin: 1rem auto;
+  margin: 2rem auto;
   padding-top: 1rem;
   width: 200px;
   height: 200px;
@@ -100,7 +109,14 @@ h2 {
   margin: 1rem;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   justify-content: space-evenly;
+}
+
+.icons {
+  width: 50px;
+  filter: drop-shadow(4px 4px 4px #00000073);
 }
 
 /*=============================[SESSÃO DO CARROSEL]=============================*/

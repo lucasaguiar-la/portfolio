@@ -14,13 +14,14 @@
     <script src="./assets/scripts/switchs.js" defer></script>
     <script src="./assets/scripts/typeWriter.js" defer></script>
     <script src="./assets/scripts/slider.js" defer></script>
-    <title>Lucas Aguiar . Dev</title>
+    <title>Lucas Aguiar.Dev</title>
   </head>
   <body class="isLight">
     <div class="container">
       <header id="fixedHeader" class="header">
         <div class="logoHeader">
           <img src="./assets/images/icons/logo1.png" alt="Logo" class="logo">
+          <img src="./assets/images/icons/logo2.png" alt="Logo" class="logoEscuro">
         </div>
         <nav class="navbar">
           <div>
@@ -33,7 +34,7 @@
                 <a href="#about" class="menuElements">Resumo</a>
               </li>
               <li class="fix">
-                <a href="#projects" class="menuElements">Projetos</a>
+                <a href="#projects" class="menuElements"><span>Projetos</span></a>
               </li>
               <li class="fix">
                 <a href="#contact" class="menuElements">Contato</a>
@@ -41,8 +42,8 @@
               <div class="switchButtons">
                 <label>
                   <input type="checkbox" class="checkbox" id="switchButtons">
-                  <img src="./assets/images/icons/sun-icon.png" alt="Botão claro" class="sunIcon">
-                  <img src="./assets/images/icons/moon-icon.png" alt="Botão escuro" class="moonIcon">
+                  <img src="./assets/images/icons/sun-icon.webp" alt="Botão do modo claro" class="sunIcon">
+                  <img src="./assets/images/icons/moon-icon.png" alt="Botão do modo escuro" class="moonIcon">
                   <span class="toggle"></span>
                 </label>
               </div>
@@ -66,97 +67,65 @@
             estudos para seguir nos caminhos do Back-End.
           </p>
           <div class="iconsContainer">
-            <a href="https://github.com/Lucas-Aguiar-La" target="_blank"><img src="./assets/images/icons/github-icon.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/" target="_blank"><img src="./assets/images/icons/linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="https://github.com/Lucas-Aguiar-La" target="_blank"><img src="./assets/images/icons/github-icon.png" alt="GitHub" class="icons"></a>
+            <a href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/" target="_blank"><img src="./assets/images/icons/linkedin-icon.png" alt="LinkedIn" class="icons"></a>
           </div>
         </div>
       </section>
-      <h2>Tecnologias fortes:</h2>
+      <h2>Tecnologias</h2>
         <div class="slider">
           <div class="sliderContent">
-            <input type="radio" name="btnRadio" id="radio1" />
-            <input type="radio" name="btnRadio" id="radio2" />
-            <input type="radio" name="btnRadio" id="radio3" />
-            <input type="radio" name="btnRadio" id="radio4" />
-            <input type="radio" name="btnRadio" id="radio5" />
-
-            <div class="sliderBox first">
-              <img
-                src="./assets/images/icons/html5-icon.png"
-                alt="HTML5"
-                class="sliderImage"
-              />
-              <span>HTML5</span>
+            <div class="card">
+              <img src="./assets/images/icons/html5-icon.png" alt="HTML5" class="cardIcon">
+              <h3>HTML5</h3>
+              <p>É uma linguagem de marcação; é basicamente todo o texto dentro de um site com suas tags, links e semântica.</p>
             </div>
-
-            <div class="sliderBox">
-              <img
-                src="./assets/images/icons/css3-icon.png"
-                alt="CSS3"
-                class="sliderImage"
-              />
-              <span>CSS3</span>
+          </div>
+          <div class="sliderContent">
+            <div class="card">
+              <img src="./assets/images/icons/css3-icon.png" alt="CSS3" class="cardIcon">
+              <h3>CSS3</h3>
+              <p>É uma linguagem de estilização; cada cor ou formatação que você está vendo, está declarada no CSS.</p>
             </div>
-
-            <div class="sliderBox">
-              <img
-                src="./assets/images/icons/js-icon.png"
-                alt="JavaScript"
-                class="sliderImage"
-              />
-              <span>JavaScript</span>
+          </div>
+          <div class="sliderContent">
+            <div class="card">
+              <img src="./assets/images/icons/js-icon.png" alt="JavaScript" class="cardIcon">
+              <h3>JavaScript</h3>
+              <p>Js é uma linguagem de programação; todos os elementos interativos ou dinâmicos são feitos com ele.</p>
             </div>
-
-            <div class="sliderBox">
-              <img
-                src="./assets/images/icons/git-icon.png"
-                alt="Git"
-                class="sliderImage"
-              />
-              <span>Git</span>
+          </div>
+          <div class="sliderContent">
+            <div class="card">
+              <img src="./assets/images/icons/node-icon.png" alt="Node.Js" class="cardIcon">
+              <h3>Node.Js</h3>
+              <p>Outra linguagem de programação; muito utilizada no back-end, é o que faz a ponte entre o usuário e os dados de um servidor, por exemplo.</p>
             </div>
-
-            <div class="sliderBox">
-              <img
-                src="./assets/images/icons/sass-icon.png"
-                alt="Sass"
-                class="sliderImage"
-              />
-              <span>Sass</span>
+          </div>
+          <div class="sliderContent">
+            <div class="card">
+              <img src="./assets/images/icons/git-icon.png" alt="Git" class="cardIcon">
+              <h3>Git</h3>
+              <p>Um sistema de controle de versão; imagine um histórico com todas as versões/fases do seu projeto, eis o git.</p>
             </div>
-
-            <div class="navAuto">
-              <div class="autoBtn1"></div>
-              <div class="autoBtn2"></div>
-              <div class="autoBtn3"></div>
-              <div class="autoBtn4"></div>
-              <div class="autoBtn5"></div>
-            </div>
-            <div class="navManual">
-              <label for="radio1" class="manualBtn"></label>
-              <label for="radio2" class="manualBtn"></label>
-              <label for="radio3" class="manualBtn"></label>
-              <label for="radio4" class="manualBtn"></label>
-              <label for="radio5" class="manualBtn"></label>
+          </div>
+          <div class="sliderContent">
+            <div class="card">
+              <img src="./assets/images/icons/sass-icon.png" alt="Sass" class="cardIcon">
+              <h3>Sass</h3>
+              <p>Um compilador de estilos; pode-se dizer que é uma extensão do CSS, agregando variáveis, funções e operações aos estilos.</p>
             </div>
           </div>
         </div>
       </section>
-      <h2>Tecnologias em estudo:</h2>
+      <h2>Estudando atualmente</h2>
       <div class="badges">
         <div class="badgesContainer">
-          <img
-            src="./assets/images/icons/node-icon.png"
-            alt="NodeJs"
-            class="studyImage"
-          />
-          <span>Node JS</span>
           <img
             src="./assets/images/icons/database-icon.png"
             alt="Banco de Dados"
             class="studyImage"
           />
-          <span>Banco de Dados</span>
         </div>
         <div class="badgesContainer">
           <img
@@ -164,17 +133,10 @@
             alt="PHP"
             class="studyImage"
           />
-          <span>PHP</span>
-          <img
-            src="./assets/images/icons/linux-icon.png"
-            alt="Linux"
-            class="studyImage"
-          />
-          <span>Linux</span>
         </div>
       </div>
       <section id="projects">
-        <h2>Projetos:</h2>
+        <h2>Projetos</h2>
         <div class="projects">
           <div class="projectBox">
             <div class="projectImageContainer">
