@@ -1,7 +1,13 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Roboto;
 }
 
 html {
@@ -15,12 +21,14 @@ h2 {
 /*==============================[HEADER]==============================*/
 
 .header {
+  z-index: 1;
   position: fixed;
   width: 100%;
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  background-color: #dce9f5;
+  background-color: #276955;
+  box-shadow: 1px 1px 5px #000000b9;
 }
 
 .logoHeader {
@@ -31,8 +39,7 @@ h2 {
 }
 
 .logo {
-  padding: 1rem;
-  font-size: 19pt;
+  width: 170px;
 }
 
 .navbar {
@@ -45,10 +52,11 @@ h2 {
 
 .resume {
   padding-top: 5rem;
+  font-weight: 300;
 }
 
 .pictureContainer {
-  margin: 0 auto;
+  margin: 1rem auto;
   padding-top: 1rem;
   width: 200px;
   height: 200px;
@@ -57,6 +65,20 @@ h2 {
 .profilePic {
   width: 200px;
   border-radius: 50%;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translatey(0);
+    filter: drop-shadow(4px 4px 4px #00000073);
+  }
+  50% {
+    transform: translatey(-10px);
+    filter: drop-shadow(4px 4px 10px #00000073);
+  }
+}
+.profilePic {
+  animation: float 3s ease-in-out infinite;
 }
 
 .texts {
@@ -69,6 +91,9 @@ h2 {
 
 .mainTitle {
   margin: 3rem 0 0 0;
+  font-weight: 300;
+  font-size: 25pt;
+  filter: drop-shadow(2px 2px 1px #00000073);
 }
 
 .iconsContainer {

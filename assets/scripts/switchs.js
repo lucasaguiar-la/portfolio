@@ -1,9 +1,7 @@
-/*Tema claro e escuro
-function switchTheme() {
-  document.body.classList.toggle("isLight");
-  document.body.classList.toggle("isDark");
-}
-document
-  .getElementById("switchThemeBtn")
-  .addEventListener("click", switchTheme);
-*/
+let switchButton = document.querySelector("#switchButtons");
+
+switchButton.addEventListener("click", () => {
+  let element = document.body;
+  element.classList.toggle("isDark");
+  element.classList.toggle("isLight");
+});

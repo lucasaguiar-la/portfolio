@@ -4,30 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/general.css" />
     <link rel="stylesheet" href="./assets/css/menu.css" />
+    <link rel="stylesheet" href="./assets/css/darkMode.css">
     <link rel="stylesheet" href="./assets/css/slider.css" />
 
     <script src="./assets/scripts/menu.js" defer></script>
     <script src="./assets/scripts/switchs.js" defer></script>
     <script src="./assets/scripts/typeWriter.js" defer></script>
     <script src="./assets/scripts/slider.js" defer></script>
-    <title>Lucas Aguiar || Portfólio</title>
+    <title>Lucas Aguiar . Dev</title>
   </head>
   <body class="isLight">
     <div class="container">
       <header id="fixedHeader" class="header">
         <div class="logoHeader">
-          <span class="logo" href="index.html">Lucas Aguiar</span>
+          <img src="./assets/images/icons/logo1.png" alt="Logo" class="logo">
         </div>
         <nav class="navbar">
           <div>
-            <button class="buttonMenu" aria-expanded="false">
+            <button class="buttonMenu">
               Menu
               <span id="hamburguer"></span>
             </button>
-            <ul class="menu">
+            <ul class="menu"> 
               <li class="fix">
                 <a href="#about" class="menuElements">Resumo</a>
               </li>
@@ -38,16 +39,18 @@
                 <a href="#contact" class="menuElements">Contato</a>
               </li>
               <div class="switchButtons">
-                <button id="switchThemeBtn" class="switchThemeBtn">Tema</button>
-                <button id="switchLanguageBtn" class="switchLanguageBtn">
-                  Idioma
-                </button>
+                <label>
+                  <input type="checkbox" class="checkbox" id="switchButtons">
+                  <img src="./assets/images/icons/sun-icon.png" alt="Botão claro" class="sunIcon">
+                  <img src="./assets/images/icons/moon-icon.png" alt="Botão escuro" class="moonIcon">
+                  <span class="toggle"></span>
+                </label>
               </div>
             </ul>
           </div>
         </nav>
       </header>
-      <section class="resume">
+      <section class="resume" id="about">
         <div class="pictureContainer">
           <img
             src="./assets/images/general/fotoPerfil.jpeg"
@@ -63,8 +66,8 @@
             estudos para seguir nos caminhos do Back-End.
           </p>
           <div class="iconsContainer">
-            <a href="icon">GitHub</a>
-            <a href="icon">LinkedIn</a>
+            <a href="https://github.com/Lucas-Aguiar-La" target="_blank"><img src="./assets/images/icons/github-icon.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/" target="_blank"><img src="./assets/images/icons/linkedin-icon.png" alt="LinkedIn"></a>
           </div>
         </div>
       </section>
@@ -170,7 +173,8 @@
           <span>Linux</span>
         </div>
       </div>
-      <section>
+      <section id="projects">
+        <h2>Projetos:</h2>
         <div class="projects">
           <div class="projectBox">
             <div class="projectImageContainer">
@@ -262,7 +266,7 @@
         </div>
       </section>
       <section>
-        <div class="contactContainer">
+        <div class="contactContainer" id="contact">
           <h3>Contatos</h3>
           <p>Não precisa ser tímido, pode entrar em contato!</p>
           <div class="contactCards">
@@ -285,7 +289,7 @@
         </div>
       </section>
       <footer>
-        <h3>Lucas2023&copy;Aguiar</h3>
+        <h3>Lucas2023Aguiar&copy;</h3>
         <div class="footerIcons">
           <a href="icon">GitHub</a>
           <a href="icon">LinkedIn</a>
