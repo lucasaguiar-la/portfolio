@@ -1,3 +1,12 @@
+
+:root{
+  --verde-escuro: #00701F;
+  --verde-claro: #A3FFBD;
+  --cinza: #2C2C2C;
+  --branco: #F4F4F4;
+  --preto: #202020;
+}
+
 @font-face {
   font-family: Montserrat;
   src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
@@ -8,205 +17,30 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Montserrat;
+  color: var(--branco);
+  background-color: var(--cinza);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-h2 {
-  margin-top: 5rem;
-  text-align: center;
-  font-size: 25pt;
-  letter-spacing: 2px;
-}
-
 /*==============================[HEADER]==============================*/
 
-.header {
-  z-index: 1;
-  position: fixed;
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  background-color: #002218f8;
-  box-shadow: 1px 1px 5px #000000b9;
-}
 
-.logoHeader {
-  margin-bottom: 0.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  width: 170px;
-}
-.logoEscuro {
-  display: none;
-  position: absolute;
-  width: 170px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: end;
-  width: 5rem;
-}
 
 /*=============================[SESSÃO DE RESUMO]=============================*/
 
-.resume {
-  padding: 5rem 1.5rem 0 1.5rem;
-  font-weight: 400;
-  color: black;
-}
 
-.pictureContainer {
-  margin: 2rem auto;
-  padding-top: 1rem;
-  width: 200px;
-  height: 200px;
-}
-
-.profilePic {
-  width: 200px;
-  border-radius: 50%;
-}
-@keyframes float {
-  0%,
-  100% {
-    transform: translatey(0);
-    filter: drop-shadow(4px 4px 4px #00000073);
-  }
-  50% {
-    transform: translatey(-10px);
-    filter: drop-shadow(4px 4px 10px #00000073);
-  }
-}
-.profilePic {
-  animation: float 3s ease-in-out infinite;
-}
-
-.texts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
-}
-
-.mainTitle {
-  margin: 3rem 0 0 0;
-  font-weight: 300;
-  font-size: 25pt;
-  filter: drop-shadow(2px 2px 1px #00000073);
-}
-
-.iconsContainer {
-  margin: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.icons {
-  width: 50px;
-  filter: drop-shadow(4px 4px 4px #00000073);
-}
-
-/*=============================[SESSÃO DO CARROSEL]=============================*/
-
-.carouselContainer {
-  position: relative;
-  z-index: -1;
-}
-
-/*=============================[SESSÃO BADGES]=============================*/
-
-.badges {
-  margin: 3rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-.badgesContainer {
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.badgesContainer span {
-  margin: 1rem 0 2rem 0;
-  text-align: center;
-}
-
-.studyImage {
-  width: 90px;
-  height: 90px;
-}
 
 /*=============================[SESSÃO PROJETOS]=============================*/
 
-.projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
 
-.projectBox {
-  margin-bottom: 2rem;
-  padding: 1rem 0.5rem 2rem 0.5rem;
-  width: 300px;
-  background-color: aqua;
-}
-
-.projectImageContainer {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-.projectImage {
-  width: 99%;
-  height: 150px;
-}
-
-.stack {
-  margin: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  text-align: center;
-}
-
-.projectButtons {
-  margin: 2rem 0.5rem 1rem 0.5rem;
-  display: flex;
-  justify-content: space-evenly;
-}
 
 /*=============================[SESSÃO DE CONTATOS]=============================*/
 
-.contactContainer {
-  text-align: center;
-}
+
 
 /*=============================[SESSÃO DO RODAPÉ]=============================*/
 
-footer {
-  margin: 1rem;
-  height: 100px;
-  text-align: center;
-}
 
-.footerIcons {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-around;
-}
