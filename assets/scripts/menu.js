@@ -1,9 +1,7 @@
 // Menu hamburguer
-let buttonMenu = document.querySelector(".buttonMenu");
-
-buttonMenu.addEventListener("click", () => {
-  let menu = document.querySelector(".menu");
-  let hamburguer = document.querySelector("#hamburguer");
-  menu.classList.toggle("active");
-  hamburguer.classList.toggle("active");
-});
+function alterarMenu() {
+  const menuToggle = document.querySelector('.menu-hambuguer');
+  if (menuToggle) {
+    menuToggle.classList.toggle('active');
+  }
+}

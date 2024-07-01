@@ -2,7 +2,7 @@
 :root{
   --verde-escuro: #00701F;
   --verde-claro: #A3FFBD;
-  --cinza: #2C2C2C;
+  --cinza: #3f3f3f;
   --branco: #F4F4F4;
   --preto: #202020;
 }
@@ -18,29 +18,12 @@
   box-sizing: border-box;
   font-family: Montserrat;
   color: var(--branco);
-  background-color: var(--cinza);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/*==============================[HEADER]==============================*/
-
-
-
-/*=============================[SESSÃO DE RESUMO]=============================*/
-
-
-
-/*=============================[SESSÃO PROJETOS]=============================*/
-
-
-
-/*=============================[SESSÃO DE CONTATOS]=============================*/
-
-
-
-/*=============================[SESSÃO DO RODAPÉ]=============================*/
-
-
+.container {
+  height: 100vh;
+}
