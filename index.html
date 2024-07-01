@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/header.css" />
     <link rel="stylesheet" href="./assets/css/home-section.css" />
     <link rel="stylesheet" href="./assets/css/project-section.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
 
     <title>Lucas Aguiar.Dev</title>
   </head>
@@ -77,20 +78,19 @@
         </div>
       </section>
       <footer class="footer">
-        <h2>Contato</h2>
         <form action="/submit-form" method="post" class="form-footer">
+          <h2>Contato</h2>
           <div class="form-info">
             <label for="nome">Digite seu nome</label><br>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required><br><br>
+            <input type="text" id="nome" class="nome" name="nome" placeholder="Digite seu nome" required><br><br>
             <label for="email">Digite seu email</label><br>
-            <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required><br><br>
+            <input type="email" id="email" class="email" name="email" placeholder="exemplo@gmail.com" required><br><br>
           </div>
           <div class="form-mensagem">
             <label for="mensagem">Digite sua mensagem</label><br>
             <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Não seja acanhado, mande uma mensagem ;D" required></textarea><br><br>
-
-            <button type="submit">Enviar</button>
           </div>
+          <button type="submit" class="botao-footer">Enviar</button>
         </form>
       </footer>
     </div>

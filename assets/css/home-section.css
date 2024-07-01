@@ -34,14 +34,16 @@ h1 span {
 }
 
 .home-descricao {
-    padding: 10px;
+    padding: 20px;
     line-height: 25px;
 }
 
 .home-descricao-redes {
     padding-top: 1rem;
+    padding: 20px;
 }
 .home-icones-redes {
+    margin-bottom: 2rem;
     padding: 10px;
     display: flex;
     justify-content: center;
