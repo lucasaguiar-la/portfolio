@@ -1,0 +1,49 @@
+.sessao-home {
+    padding-top: 10rem;
+    background-color: var(--preto);
+}
+
+.home-imagem {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--preto);
+}
+
+.imagem-perfil {
+    width: 280px;
+    box-shadow: 20px 20px 1px var(--verde-escuro);
+}
+
+.home-texto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home-titulo {
+    padding: 10px;
+    background-color: var(--preto);
+}
+h1 span {
+    display: block;
+    background-color: var(--preto);
+}
+.home-nome {
+    color: var(--verde-claro);
+}
+
+.home-descricao {
+    padding: 10px;
+    line-height: 25px;
+}
+
+.home-descricao-redes {
+    padding-top: 1rem;
+}
+.home-icones-redes {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}

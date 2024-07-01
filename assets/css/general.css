@@ -4,7 +4,7 @@
   --verde-claro: #A3FFBD;
   --cinza: #3f3f3f;
   --branco: #F4F4F4;
-  --preto: #202020;
+  --preto: #020202;
 }
 
 @font-face {
@@ -17,6 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Montserrat;
+  font-weight: 300;
   color: var(--branco);
 }
 
