@@ -26,6 +26,24 @@ input, textarea {
     color: white;
 }
 
+.form-titulo::before {
+    content: "Entre em";
+    display: block;
+    font-size: 0.2em;
+    text-align: left;
+    color: aliceblue;
+    padding-left: 40px;
+}
+.form-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 130px;
+    height: 4px;
+    background-color: var(--verde-claro);
+}
+
 .form-mensagem {
     margin-bottom: 1rem;
 }

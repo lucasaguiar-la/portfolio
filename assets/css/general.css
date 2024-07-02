@@ -30,3 +30,13 @@ html {
 .container {
   height: 100vh;
 }
+
+h2 {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 64px;
+  color: var(--verde-claro);
+}

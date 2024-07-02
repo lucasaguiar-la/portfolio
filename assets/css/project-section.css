@@ -3,16 +3,16 @@
     padding-top: 30px;
     background-color: var(--preto-claro);
 }
-h2 {
-    position: relative;
-    margin-bottom: 2rem;
-    padding: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    font-size: 64px;
-    color: var(--verde-claro);
+
+.projeto-titulo::before {
+    content: "Destaque";
+    display: block;
+    font-size: 0.2em;
+    text-align: left;
+    color: aliceblue;
+    padding-left: 50px;
 }
-h2::after {
+.projeto-titulo::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -33,7 +33,7 @@ h2::after {
 .card-projetos {
     max-width: 320px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 30px;
     background-color: var(--cinza);
 }
 
@@ -58,6 +58,7 @@ h3::after {
     height: 2px;
     background-color: var(--verde-claro);
 }
+
 .card-imagem {
     margin: 1rem;
     border-radius: 5px;
