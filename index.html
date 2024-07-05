@@ -37,7 +37,7 @@
             <h1>Olá 👋 Me chamo <span class="home-nome">&lt;Lucas Aguiar/&gt;</span></h1>
           </div>
           <div class="home-descricao">
-            <p>Seja muito bem-vindo ao meu portfólio pessoal! Se você chegou até aqui, provavelmente tem interesse em saber sorbe minha experiência profissional e habilidades.</p>
+            <p>Seja muito bem-vindo ao meu portfólio pessoal! Se você chegou até aqui, provavelmente tem interesse em saber sobre minha experiência profissional e habilidades.</p>
             <p class="home-descricao-redes">Se deseja entrar em contato comigo, pode usar as redes sociais.</p>
           </div>
           <div class="home-icones-redes">
@@ -82,10 +82,14 @@
         <form action="/submit-form" method="post" class="form-footer">
           <h2 class="form-titulo">Contato</h2>
           <div class="form-info">
-            <label for="nome">Digite seu nome</label><br>
+            <div class="contato-nome">
+              <label for="nome">Digite seu nome</label><br>
             <input type="text" id="nome" class="nome" name="nome" placeholder="Digite seu nome" required><br><br>
-            <label for="email">Digite seu email</label><br>
+            </div>
+            <div class="contato-email">
+              <label for="email">Digite seu email</label><br>
             <input type="email" id="email" class="email" name="email" placeholder="exemplo@gmail.com" required><br><br>
+            </div>
           </div>
           <div class="form-mensagem">
             <label for="mensagem">Digite sua mensagem</label><br>

@@ -100,7 +100,7 @@
 
     /*[PROJETOS]*/
     .sessao-projetos {
-        height: 100vh;
+        min-height: 100vh;
     }
     .container-cards{
         flex-direction: row;
@@ -123,7 +123,43 @@
         transition: 0.3s;
     }
     .botoes-card:hover {
-        color: var(--preto);
+        color: var(--verde-claro);
         background-color: var(--verde-militar);
+    }
+
+    .footer {
+        max-width: 100%;
+    }
+    .form-titulo::before {
+        text-align: left;
+        padding-left: 10px;
+    }
+    .form-titulo {
+        margin-left: 2rem;
+        text-align: start;
+    }
+    .form-titulo::after {
+        left: 15%;
+    }
+    .contato-nome, .contato-email {
+        width: 30%;
+    }
+    .form-info, .form-mensagem {
+        margin-left: 3rem;
+        text-align: left;
+    }
+    .form-info {
+        display: flex;
+        gap: 25px;
+    }
+    .form-mensagem {
+        width: 60%;
+    }
+    textarea {
+        height: 130px;
+    }
+    .botao-footer {
+        width: 70px;
+        margin-left: 3rem;
     }
 }
