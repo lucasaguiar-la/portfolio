@@ -51,3 +51,33 @@ function adicionarCard(titulo, imagemSrc, descricao, linkProjeto, linkCodigo) {
     // Insere o novo card antes do card "Em Desenvolvimento"
     cardEmDesenvolvimento.parentNode.insertBefore(card, cardEmDesenvolvimento);
 }
+
+// Exemplo de uso
+adicionarCard(
+    'Projeto de Exemplo',
+    './assets/images/geral/exemplo-projeto.png',
+    'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
+    '#',
+    '#'
+);
+adicionarCard(
+    'Projeto de Exemplo',
+    './assets/images/geral/exemplo-projeto.png',
+    'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
+    '#',
+    '#'
+);
+adicionarCard(
+    'Projeto de Exemplo',
+    './assets/images/geral/exemplo-projeto.png',
+    'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
+    '#',
+    '#'
+);
+adicionarCard(
+    'Projeto de Exemplo',
+    './assets/images/geral/exemplo-projeto.png',
+    'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
+    '#',
+    '#'
+);

@@ -1,4 +1,5 @@
 .sessao-projetos {
+    min-height: 100vh;
     padding-bottom: 5rem;
     padding-top: 30px;
     background-color: var(--preto-claro);
@@ -23,6 +24,7 @@
 }
 
 .container-cards {
+    margin-top: 4rem;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -32,8 +34,10 @@
 
 .card-projetos {
     max-width: 320px;
+    min-height: 400px;
     padding: 10px;
     border-radius: 30px;
+    overflow: hidden;
     background-color: var(--cinza);
 }
 
@@ -64,8 +68,10 @@ h3::after {
     border-radius: 5px;
 }
 .card-descricao {
+    min-height: 90px;
     padding: 10px;
     text-align: center;
+    word-wrap: break-word;
 }
 .card-botoes {
     height: 90px;
