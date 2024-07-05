@@ -53,7 +53,7 @@ h3::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 40%;
+    left: 60%;
     width: 100px;
     height: 2px;
     background-color: var(--verde-claro);
