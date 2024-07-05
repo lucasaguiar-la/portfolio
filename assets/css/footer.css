@@ -22,6 +22,9 @@ input, textarea {
     border-radius: 5px;
     background-color: var(--cinza-claro);
 }
+textarea {
+    resize: none;
+}
 ::placeholder {
     color: white;
 }
