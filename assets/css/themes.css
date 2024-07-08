@@ -1,36 +1,46 @@
+
+#trocarTema {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11pt;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .tema-claro {
-  color: #f4f4f4;
-  background-color: #202020;
-
   .header {
-    justify-content: space-between;
-    background-color: #12263a;
+    background-color: var(--branco-escuro);
   }
-  .logoEscuro {
-    display: block;
+  .menu-botoes a {
+    color: var(--preto);
   }
-
-  .buttonMenu {
-    color: white;
+  .sessao-home, .home-imagem, .home-titulo, h1 span {
+    background-color: var(--branco-escuro);
   }
-  .menu {
-    background-color: #12263af6;
+  .home-descricao p, h1 {
+    color: var(--preto);
   }
-  .menuElements {
-    color: #da4900;
-    transition: 0.5s;
+  .home-nome {
+    color: var(--verde-escuro);
   }
-  .menuElements span {
-    color: #f4f4f4;
-    font-weight: 300;
-    transition: 0.5s;
+  .sessao-projetos {
+    background-color: var(--cinza);
   }
 
-  .card {
-    color: #202020;
-    background-color: #f4f4f486;
-  }
-  .card p {
-    font-weight: 300;
+  @media (min-width: 950px){
+    .sessao-home{
+      background: linear-gradient(to right, var(--branco) 70%, var(--preto)25%);
+    }
   }
 }

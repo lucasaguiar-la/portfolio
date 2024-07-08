@@ -1,7 +1,5 @@
-let switchButton = document.querySelector("#switchButtons");
 
-switchButton.addEventListener("click", () => {
-  let element = document.body;
-  element.classList.toggle("isDark");
-  element.classList.toggle("isLight");
+document.getElementById("trocarTema").addEventListener('click', function() {
+  document.body.classList.toggle('tema-escuro')
+  document.body.classList.toggle('tema-claro')
 });
