@@ -76,5 +76,13 @@
     .home-titulo, h1 span {
       background-color: var(--branco-escuro);
     }
+
+    .botoes-card {
+      transition: 0.3s;
+  }
+    .botoes-card:hover {
+      color: var(--verde-claro);
+      background-color: var(--cinza);
+    }
   }
 }

@@ -120,10 +120,11 @@
     .projeto-titulo::after {
         left: 15%;
     }
-    .botoes-card {
+    .botoes-card, .botao-footer {
+        cursor: pointer;
         transition: 0.3s;
     }
-    .botoes-card:hover {
+    .botoes-card:hover, .botao-footer:hover {
         color: var(--verde-claro);
         background-color: var(--verde-militar);
     }
