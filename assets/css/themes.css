@@ -1,10 +1,9 @@
 
 #trocarTema {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #000;
-  color: #fff;
+  bottom: 25px;
+  left: 25px;
+  background-color: #424f4681;
   border: none;
   border-radius: 50%;
   width: 55px;
@@ -15,32 +14,67 @@
   font-size: 11pt;
   cursor: pointer;
   z-index: 1000;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  filter: drop-shadow(3px 3px 2px #333333a5);
+}
+#trocar-tema-icon {
+  transition: transform 0.5s ease;
+}
+#trocar-tema-icon.girando {
+  transform: rotate(360deg);
+}
+.trocar-tema-icon {
+  width: 30px;
+  transition: 0.5s;
 }
 
 .tema-claro {
-  .header {
+  #trocarTema {
+    background-color: #3f3f3f8a;
+  }
+  /*=====.:[GERAL]:.=====*/
+  .header, .sessao-home, .home-imagem, .home-titulo, h1 span, .card-projetos, .footer {
     background-color: var(--branco-escuro);
-  }
-  .menu-botoes a {
-    color: var(--preto);
-  }
-  .sessao-home, .home-imagem, .home-titulo, h1 span {
-    background-color: var(--branco-escuro);
-  }
-  .home-descricao p, h1 {
-    color: var(--preto);
-  }
-  .home-nome {
-    color: var(--verde-escuro);
-  }
-  .sessao-projetos {
-    background-color: var(--cinza);
   }
 
+  .menu-botoes a, .home-descricao p, h1, .projeto-titulo::before,  .card-descricao p, .form-titulo::before  {
+    color: var(--preto);
+  }
+
+  .home-nome, label {
+    color: var(--verde-escuro);
+  }
+
+  .sessao-projetos {
+    background-color: var(--cinza-claro);
+  }
+  .projeto-titulo, h3, .form-titulo {
+    color: var(--verde-escuro);
+  }
+  .projeto-titulo::after, h3::after, .form-titulo::after {
+    background-color: var(--verde-escuro);
+  }
+
+  .card-botoes a, .botao-footer {
+    color: var(--branco-escuro);
+    background-color: var(--verde-militar);
+  }
+
+  /*=====.:[COMPUTADORES]:.=====*/
   @media (min-width: 950px){
+    .botao-menu:hover {
+      transition: 0.6s;
+      color: var(--verde-escuro);
+    }
+
     .sessao-home{
-      background: linear-gradient(to right, var(--branco) 70%, var(--preto)25%);
+      background: linear-gradient(to right, var(--branco-escuro) 70%, var(--preto-claro)25%);
+    }
+    .home-imagem {
+      background-color: transparent;
+    }
+    .home-titulo, h1 span {
+      background-color: var(--branco-escuro);
     }
   }
 }
