@@ -12,7 +12,7 @@ document.getElementById("trocarTema").addEventListener('click', function() {
     logo.src = "./assets/images/geral/menu-image.png"
     botaoTema.src = "./assets/images/geral/escuro.png"
   } else {
-    logo.src = "./assets/images/geral/menu-image-alt.png"
+    logo.src = "./assets/images/geral/menu-image-alt.svg"
     botaoTema.src = "./assets/images/geral/claro.png"
   }
 
