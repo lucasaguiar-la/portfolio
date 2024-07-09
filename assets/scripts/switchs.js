@@ -8,6 +8,7 @@ document.getElementById("trocarTema").addEventListener('click', function() {
 
   botaoTema.classList.add('girando')
 
+  // [TROCA O TEMA CLARO/ESCURO E MUDA A LOGO]
   if(document.body.classList.contains('tema-escuro')) {
     logo.src = "./assets/images/geral/menu-image.png"
     botaoTema.src = "./assets/images/geral/escuro.png"
@@ -16,6 +17,7 @@ document.getElementById("trocarTema").addEventListener('click', function() {
     botaoTema.src = "./assets/images/geral/claro.png"
   }
 
+  // [EFEITO DO BOTÃO DE TEMA AO CLICAR]
   setTimeout(function() {
     botaoTema.classList.remove('girando');
   }, 250)

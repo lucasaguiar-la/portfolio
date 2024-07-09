@@ -1,8 +1,8 @@
 function adicionarCard(titulo, imagemSrc, descricao, linkProjeto, linkCodigo) {
     const card = document.createElement('div');
-    card.className = 'card-projetos';
+    card.className = 'card-projetos fade-in';
 
-    // Define elementos da div de título
+    // [ELEMENTOS DO TITULO E IMG]
     const cardTitulo = document.createElement('div');
     cardTitulo.className = 'card-titulo';
     const h3 = document.createElement('h3');
@@ -15,19 +15,17 @@ function adicionarCard(titulo, imagemSrc, descricao, linkProjeto, linkCodigo) {
     cardTitulo.appendChild(h3);
     cardTitulo.appendChild(img);
 
+    // [ELEMENTOS DA DESCRIÇÃO]
     const cardDescricao = document.createElement('div');
     cardDescricao.className = 'card-descricao';
-
-    // Define elementos da div de descrição
     const p = document.createElement('p');
     p.textContent = descricao;
     cardDescricao.appendChild(p);
-    const cardBotoes = document.createElement('div');
 
+    // [DEFINE OS LINKS E OS BOTÕES PARA O PROJETO]
+    const cardBotoes = document.createElement('div');
     cardBotoes.className = 'card-botoes';
     const linkProjetoElement = document.createElement('a');
-
-    // Define elementos do link para o projeto
     linkProjetoElement.href = linkProjeto;
     linkProjetoElement.className = 'botoes-card';
     linkProjetoElement.textContent = 'Ver projeto';
@@ -40,15 +38,15 @@ function adicionarCard(titulo, imagemSrc, descricao, linkProjeto, linkCodigo) {
     cardBotoes.appendChild(linkProjetoElement);
     cardBotoes.appendChild(linkCodigoElement);
 
-    // Monta o card completo
+    // [MONTA O CARD]
     card.appendChild(cardTitulo);
     card.appendChild(cardDescricao);
     card.appendChild(cardBotoes);
 
-    // Encontra o card "Em Desenvolvimento"
+    // [ENCONTRA O CARD "Em Desenvolvimento"]
     const cardEmDesenvolvimento = document.getElementById('card-em-desenvolvimento');
 
-    // Insere o novo card antes do card "Em Desenvolvimento"
+    // [INSERE O NOVO CARD ANTES DO ÚLTIMO CARD]
     cardEmDesenvolvimento.parentNode.insertBefore(card, cardEmDesenvolvimento);
 }
 
