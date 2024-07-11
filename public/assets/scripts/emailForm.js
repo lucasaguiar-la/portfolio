@@ -1,3 +1,5 @@
+
+const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://portfolio-my2v.onrender.com/'
 document.querySelector('.form-footer').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -6,7 +8,7 @@ document.querySelector('.form-footer').addEventListener('submit', async function
     const data = Object.fromEntries(formularioData.entries());
 
     try {
-        const response = await fetch('http://localhost:3000/submit-form', {
+        const response = await fetch(`${apiUrl}/submit-form`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
