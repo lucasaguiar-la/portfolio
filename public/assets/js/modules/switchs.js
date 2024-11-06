@@ -15,7 +15,7 @@ const IMAGES = {
   }
 };
 
-class ThemeManager {
+export class ThemeManager {
   constructor() {
       this.themeButton = document.getElementById('trocarTema');
       this.logo = document.getElementById('logo');

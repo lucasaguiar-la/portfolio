@@ -1,4 +1,4 @@
-import { ThemeManager } from './modules/theme.js';
+import { ThemeManager } from './modules/switchs.js';
 
 class App {
     constructor() {
