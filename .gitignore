@@ -1,3 +1,27 @@
+# Node
 node_modules/
+
+# Ambiente
 .env
-public/assets/test
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+.npm
+.eslintcache
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
