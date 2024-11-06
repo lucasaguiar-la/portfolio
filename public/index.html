@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Lucas Aguiar - Desenvolvedor Web">
+    <meta name="keywords" content="desenvolvedor, portfolio, web development">
+    <meta property="og:title" content="Lucas Aguiar.Dev">
+    <meta property="og:description" content="Portfólio de Lucas Aguiar - Desenvolvedor Web">
+    <meta property="og:type" content="website">
 
     <link rel="shortcut icon" href="./assets/images/fav/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/general.css" />
@@ -16,12 +21,12 @@
     <title>Lucas Aguiar.Dev</title>
   </head>
   <body class="tema-escuro">
-    <button id="trocarTema" class="tema-escuro fade-in">
-      <img src="./assets/images/geral/escuro.png" alt="trocar-tema" id="trocar-tema-icon" class="trocar-tema-icon">
+    <button id="trocarTema" class="tema-escuro fade-in" aria-label="Trocar tema do site">
+      <img src="./assets/images/geral/escuro.png" alt="trocar-tema" id="trocar-tema-icon" class="trocar-tema-icon" loading="lazy">
     </button>
     <div class="container">
       <header class="header">
-        <nav class="menu-header">
+        <nav class="menu-header" role="navigation">
           <div>
             <img src="./assets/images/geral/menu-image.svg" alt="logo" id="logo" class="menu-logo">
           </div>
@@ -45,9 +50,15 @@
             <p class="home-descricao-redes">Se deseja entrar em contato comigo, pode usar as redes sociais.</p>
           </div>
           <div class="home-icones-redes">
-            <a href="https://wa.me/5511974549205" target="_blank"><img src="./assets/images/contatos/whatsapp-icon.png" alt="whatsapp"></a>
-            <a href="https://github.com/lucasaguiar-la" target="_blank"><img src="./assets/images/contatos/github-icon.png" alt="github"></a>
-            <a href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/" target="_blank"><img src="./assets/images/contatos/linkedin-icon.png" alt="linkedin"></a>
+            <a href="https://wa.me/5511974549205" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp">
+              <img src="./assets/images/contatos/whatsapp-icon.png" alt="whatsapp" loading="lazy">
+            </a>
+            <a href="https://github.com/lucasaguiar-la" target="_blank" rel="noopener noreferrer" aria-label="Perfil GitHub">
+              <img src="./assets/images/contatos/github-icon.png" alt="github" loading="lazy">
+            </a>
+            <a href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/" target="_blank" rel="noopener noreferrer" aria-label="Perfil LinkedIn">
+              <img src="./assets/images/contatos/linkedin-icon.png" alt="linkedin" loading="lazy">
+            </a>
           </div>
         </div>
       </section>
