@@ -1,67 +1,62 @@
-function adicionarCard(titulo, imagemSrc, descricao, linkProjeto, linkCodigo) {
-    const card = document.createElement('div');
-    card.className = 'card-projetos fade-in';
+export class CardManager {
+    constructor() {
+        this.containerCards = document.querySelector('.container-cards');
+        this.cardEmDesenvolvimento = document.getElementById('card-em-desenvolvimento');
+        this.projects = [
+            {
+                titulo: 'Projeto de Exemplo 1',
+                imagemSrc: './assets/images/geral/exemplo-projeto.png',
+                descricao: 'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
+                linkProjeto: '#',
+                linkCodigo: '#'
+            },
+            {
+                titulo: 'Projeto de Exemplo 2',
+                imagemSrc: './assets/images/geral/exemplo-projeto.png',
+                descricao: 'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
+                linkProjeto: '#',
+                linkCodigo: '#'
+            },
+            // Outros projetos aqui
+        ];
+    }
 
-    // [ELEMENTOS DO TITULO E IMG]
-    const cardTitulo = document.createElement('div');
-    cardTitulo.className = 'card-titulo';
-    const h3 = document.createElement('h3');
-    h3.textContent = titulo;
-    const img = document.createElement('img');
-    img.src = imagemSrc;
-    img.alt = `Imagem do projeto ${titulo}`;
-    img.className = 'card-imagem';
+    createCardElement({ titulo, imagemSrc, descricao, linkProjeto, linkCodigo }) {
+        const template = `
+            <div class="card-projetos fade-in start">
+                <div class="card-titulo">
+                    <h3>${titulo}</h3>
+                    <img src="${imagemSrc}" alt="Imagem do projeto ${titulo}" class="card-imagem">
+                </div>
+                <div class="card-descricao">
+                    <p>${descricao}</p>
+                </div>
+                <div class="card-botoes">
+                    <a href="${linkProjeto}" class="botoes-card" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                    <a href="${linkCodigo}" class="botoes-card" target="_blank" rel="noopener noreferrer">Ver código</a>
+                </div>
+            </div>
+        `;
 
-    cardTitulo.appendChild(h3);
-    cardTitulo.appendChild(img);
+        const card = document.createElement('div');
+        card.innerHTML = template.trim();
+        return card.firstElementChild;
+    }
 
-    // [ELEMENTOS DA DESCRIÇÃO]
-    const cardDescricao = document.createElement('div');
-    cardDescricao.className = 'card-descricao';
-    const p = document.createElement('p');
-    p.textContent = descricao;
-    cardDescricao.appendChild(p);
+    adicionarCard(projectData) {
+        const card = this.createCardElement(projectData);
+        
+        const firstCard = this.containerCards.firstElementChild;
+        if (firstCard) {
+            this.containerCards.insertBefore(card, firstCard.nextSibling);
+        } else {
+            this.containerCards.appendChild(card);
+        }
+    }
 
-    // [DEFINE OS LINKS E OS BOTÕES PARA O PROJETO]
-    const cardBotoes = document.createElement('div');
-    cardBotoes.className = 'card-botoes';
-    const linkProjetoElement = document.createElement('a');
-    linkProjetoElement.href = linkProjeto;
-    linkProjetoElement.className = 'botoes-card';
-    linkProjetoElement.textContent = 'Ver projeto';
-
-    const linkCodigoElement = document.createElement('a');
-    linkCodigoElement.href = linkCodigo;
-    linkCodigoElement.className = 'botoes-card';
-    linkCodigoElement.textContent = 'Ver código';
-
-    cardBotoes.appendChild(linkProjetoElement);
-    cardBotoes.appendChild(linkCodigoElement);
-
-    // [MONTA O CARD]
-    card.appendChild(cardTitulo);
-    card.appendChild(cardDescricao);
-    card.appendChild(cardBotoes);
-
-    // [ENCONTRA O CARD "Em Desenvolvimento"]
-    const cardEmDesenvolvimento = document.getElementById('card-em-desenvolvimento');
-
-    // [INSERE O NOVO CARD ANTES DO ÚLTIMO CARD]
-    cardEmDesenvolvimento.parentNode.insertBefore(card, cardEmDesenvolvimento);
+    init() {
+        [...this.projects].reverse().forEach(project => {
+            this.adicionarCard(project);
+        });
+    }
 }
-
-// Exemplo de uso
-adicionarCard(
-    'Projeto de Exemplo',
-    './assets/images/geral/exemplo-projeto.png',
-    'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
-    '#',
-    '#'
-);
-adicionarCard(
-    'Projeto de Exemplo',
-    './assets/images/geral/exemplo-projeto.png',
-    'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
-    '#',
-    '#'
-);

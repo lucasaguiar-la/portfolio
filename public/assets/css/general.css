@@ -45,7 +45,7 @@ h2 {
 
 /*[TRANSIÇÃO]*/
 .header, .menu-header, .sessao-home, .home-imagem {
-  transition: 0.6s;
+  transition: 0.4s;
 }
 
 /*[ABERTURA NO LOADING DA PÁGINA]*/
