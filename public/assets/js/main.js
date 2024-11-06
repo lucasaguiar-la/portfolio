@@ -10,7 +10,6 @@ class App {
     }
 }
 
-// Inicialização quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
     const app = new App();
     app.init();
