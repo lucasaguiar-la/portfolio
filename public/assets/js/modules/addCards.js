@@ -23,7 +23,7 @@ export class CardManager {
 
     createCardElement({ titulo, imagemSrc, descricao, linkProjeto, linkCodigo }) {
         const template = `
-            <div class="card-projetos fade-in start">
+            <div class="card-projetos fade-in">
                 <div class="card-titulo">
                     <h3>${titulo}</h3>
                     <img src="${imagemSrc}" alt="Imagem do projeto ${titulo}" class="card-imagem">
@@ -43,20 +43,30 @@ export class CardManager {
         return card.firstElementChild;
     }
 
-    adicionarCard(projectData) {
+    addCard(projectData) {
         const card = this.createCardElement(projectData);
         
-        const firstCard = this.containerCards.firstElementChild;
-        if (firstCard) {
-            this.containerCards.insertBefore(card, firstCard.nextSibling);
-        } else {
-            this.containerCards.appendChild(card);
-        }
+        // Adiciona o novo card antes do card "Em Desenvolvimento"
+        this.containerCards.insertBefore(card, this.cardEmDesenvolvimento);
+
+        // Adicione o novo card ao observador
+        const observador = new IntersectionObserver((entrada, observador) => {
+            entrada.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add("start");
+                    observador.unobserve(entrada.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        observador.observe(card);
     }
 
     init() {
-        [...this.projects].reverse().forEach(project => {
-            this.adicionarCard(project);
+        this.projects.forEach(project => {
+            this.addCard(project);
         });
     }
 }
