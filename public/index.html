@@ -3,25 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Lucas Aguiar - Desenvolvedor Web">
+    <meta name="keywords" content="desenvolvedor, portfolio, web development">
+    <meta property="og:title" content="Lucas Aguiar.Dev">
+    <meta property="og:description" content="Portfólio de Lucas Aguiar - Desenvolvedor Web">
+    <meta property="og:type" content="website">
 
     <link rel="shortcut icon" href="./assets/images/fav/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./assets/css/general.css" />
-    <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/home-section.css" />
-    <link rel="stylesheet" href="./assets/css/project-section.css" />
-    <link rel="stylesheet" href="./assets/css/footer.css" />
-    <link rel="stylesheet" href="assets/css/themes.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Lucas Aguiar.Dev</title>
   </head>
   <body class="tema-escuro">
-    <button id="trocarTema" class="tema-escuro fade-in">
-      <img src="./assets/images/geral/escuro.png" alt="trocar-tema" id="trocar-tema-icon" class="trocar-tema-icon">
+    <button id="trocarTema" class="tema-escuro fade-in" aria-label="Trocar tema do site">
+      <img src="./assets/images/geral/escuro.png" alt="trocar-tema" id="trocar-tema-icon" class="trocar-tema-icon" loading="lazy">
     </button>
     <div class="container">
       <header class="header">
-        <nav class="menu-header">
+        <nav class="menu-header" role="navigation">
           <div>
             <img src="./assets/images/geral/menu-image.svg" alt="logo" id="logo" class="menu-logo">
           </div>
@@ -34,7 +33,7 @@
       </header>
       <section id="home" class="sessao-home">
         <div class="home-imagem fade-in">
-          <img src="./assets/images/geral/perfil-image.jpg" alt="imagem-perfil"  class="imagem-perfil pulsar-sombra">
+          <img src="./assets/images/geral/perfil-image.jpeg" alt="imagem-perfil"  class="imagem-perfil pulsar-sombra">
         </div>
         <div class="home-texto fade-in">
           <div class="home-titulo">
@@ -45,9 +44,15 @@
             <p class="home-descricao-redes">Se deseja entrar em contato comigo, pode usar as redes sociais.</p>
           </div>
           <div class="home-icones-redes">
-            <a href="https://wa.me/5511974549205" target="_blank"><img src="./assets/images/contatos/whatsapp-icon.png" alt="whatsapp"></a>
-            <a href="https://github.com/lucasaguiar-la" target="_blank"><img src="./assets/images/contatos/github-icon.png" alt="github"></a>
-            <a href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/" target="_blank"><img src="./assets/images/contatos/linkedin-icon.png" alt="linkedin"></a>
+            <a href="https://wa.me/5511974549205" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp">
+              <img src="./assets/images/contatos/whatsapp-icon.png" alt="whatsapp" loading="lazy">
+            </a>
+            <a href="https://github.com/lucasaguiar-la" target="_blank" rel="noopener noreferrer" aria-label="Perfil GitHub">
+              <img src="./assets/images/contatos/github-icon.png" alt="github" loading="lazy">
+            </a>
+            <a href="https://www.linkedin.com/in/lucas-aguiar-5a889126b/" target="_blank" rel="noopener noreferrer" aria-label="Perfil LinkedIn">
+              <img src="./assets/images/contatos/linkedin-icon.png" alt="linkedin" loading="lazy">
+            </a>
           </div>
         </div>
       </section>
@@ -70,30 +75,30 @@
         </div>
       </section>
       <footer id="contato" class="footer">
-        <form action="/submit-form" method="post" class="form-footer fade-in">
+        <form class="form-footer fade-in">
           <h2 class="form-titulo">Contato</h2>
           <div class="form-info">
             <div class="contato-nome">
               <label for="nome">Digite seu nome</label><br>
-            <input type="text" id="nome" class="nome" name="nome" placeholder="Digite seu nome" required><br><br>
+              <input type="text" id="nome" class="nome" name="nome" 
+                    placeholder="Digite seu nome" required><br><br>
             </div>
             <div class="contato-email">
               <label for="email">Digite seu email</label><br>
-            <input type="email" id="email" class="email" name="email" placeholder="exemplo@gmail.com / FAVOR VERIFICAR" required><br><br>
+              <input type="email" id="email" class="email" name="email" 
+                    placeholder="exemplo@gmail.com" required><br><br>
             </div>
           </div>
           <div class="form-mensagem">
             <label for="mensagem">Digite sua mensagem</label><br>
-            <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Não seja acanhado, mande uma mensagem ;D" required></textarea><br><br>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50" 
+                      placeholder="Não seja acanhado, mande uma mensagem ;D" required></textarea><br><br>
           </div>
           <button type="submit" class="botao-footer">Enviar</button>
         </form>
       </footer>
     </div>
 
-    <script src="./assets/scripts/fadeIn.js"></script>
-    <script src="./assets/scripts/switchs.js"></script>
-    <script src="./assets/scripts/addCards.js"></script>
-    <script src="./assets/scripts/emailForm.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
