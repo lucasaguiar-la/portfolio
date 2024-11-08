@@ -78,7 +78,8 @@
         font-size: 35pt;
     }
     .home-descricao {
-        max-width: 550px;
+        max-width: 750px;
+        font-size: 16pt;
     }
     .home-descricao-redes {
         padding: 0;
@@ -118,7 +119,7 @@
         text-align: start;
     }
     .projeto-titulo::after {
-        left: 15%;
+        left: 9%;
     }
     .botoes-card, .botao-footer {
         cursor: pointer;
@@ -142,7 +143,7 @@
         text-align: start;
     }
     .form-titulo::after {
-        left: 15%;
+        left: 9%;
     }
     .contato-nome, .contato-email {
         width: 30%;
