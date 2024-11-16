@@ -1,6 +1,10 @@
 
 /*=====.:[TABLETS]:.=====*/
 @media (min-width: 600px) {
+    #trocarTema {
+        left: 85%;
+    }
+
     .projeto-titulo::before, .form-titulo::before {
         content: "Destaque";
         max-width: 300px;
@@ -16,6 +20,10 @@
 }
 
 @media (min-width: 720px) {
+    #trocarTema {
+        left: 90%;
+    }
+
     .projeto-titulo::before, .form-titulo::before {
         content: "Destaque";
         max-width: 100vw;
@@ -40,7 +48,7 @@
 /*=====.:[COMPUTADORES]:.=====*/
 @media (min-width: 950px) {
     #trocarTema {
-        left: 94%;
+        left: 25px;
     }
     /*[MENU]*/
     .menu-header {
