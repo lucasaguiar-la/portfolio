@@ -39,6 +39,9 @@
 
 /*=====.:[COMPUTADORES]:.=====*/
 @media (min-width: 950px) {
+    #trocarTema {
+        left: 94%;
+    }
     /*[MENU]*/
     .menu-header {
         flex-direction: row;
@@ -163,7 +166,7 @@
         height: 130px;
     }
     .botao-footer {
-        width: 70px;
+        width: 90px;
         margin-left: 3rem;
     }
 }

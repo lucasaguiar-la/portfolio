@@ -15,6 +15,21 @@
   src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
+/*[ESTILIZAÇÃO BARRA DE SCROLL]*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cinza-claro);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--verde-claro);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--verde-escuro);
+}
+
 /*[FORMATAÇÃO PADRÃO]*/
 * {
   margin: 0;
@@ -32,7 +47,7 @@ html {
   height: 100vh;
 }
 
-/*[TÍTULOS DE SESSÃO*/
+/*[TÍTULOS DE SESSÃO]*/
 h2 {
   position: relative;
   margin-bottom: 2rem;
@@ -59,6 +74,20 @@ h2 {
   transform: translateY(0);
 }
 
+/*[ANIMAÇÃO DA SOMBRA NA FOTO]*/
+@keyframes pulso {
+  0%, 100% {
+    box-shadow: 18px 18px 1px var(--verde-escuro);
+  }
+  50% {
+    box-shadow: 20px 20px 5px var(--verde-escuro);
+  }
+}
+.pulsar-sombra {
+  display: inline-block;
+    animation: pulso 3.5s infinite;
+}
+
 /*[ANIMAÇÃO DA MÃOZINHA]*/
 @keyframes ula {
   0% {
@@ -81,18 +110,4 @@ h2 {
   display: inline-block;
   animation: ula 1.4s infinite;
   transform-origin: 70% 70%;
-}
-
-/*[ANIMAÇÃO DA SOMBRA NA FOTO]*/
-@keyframes pulso {
-  0%, 100% {
-    box-shadow: 18px 18px 1px var(--verde-escuro);
-  }
-  50% {
-    box-shadow: 20px 20px 5px var(--verde-escuro);
-  }
-}
-.pulsar-sombra {
-  display: inline-block;
-    animation: pulso 3.5s infinite;
 }
