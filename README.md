@@ -4,7 +4,7 @@ Bem-vindo ao meu portfólio! Aqui você encontrará uma coleção de projetos qu
 
 ## Imagens
 <div style="max-width: 600px; overflow: hidden;">
-  <img src="./public/assets/images/geral/readme.png" alt="Imagem-Portfólio" style="width: 600px; height: auto;">
+  <img src="./public/assets/images/geral/readme.png" alt="Imagem-Portfólio" style="width: 80%; height: auto;">
 </div>
 
 
