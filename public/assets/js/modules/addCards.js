@@ -17,7 +17,6 @@ export class CardManager {
                 linkProjeto: '#',
                 linkCodigo: '#'
             },
-            // Outros projetos aqui
         ];
     }
 
@@ -45,11 +44,8 @@ export class CardManager {
 
     addCard(projectData) {
         const card = this.createCardElement(projectData);
-        
-        // Adiciona o novo card antes do card "Em Desenvolvimento"
         this.containerCards.insertBefore(card, this.cardEmDesenvolvimento);
 
-        // Adicione o novo card ao observador
         const observador = new IntersectionObserver((entrada, observador) => {
             entrada.forEach(entrada => {
                 if (entrada.isIntersecting) {

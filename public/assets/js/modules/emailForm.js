@@ -58,15 +58,12 @@ export class EmailFormManager {
         messageDiv.className = `form-message ${type}`;
         messageDiv.textContent = message;
         
-        // Remove mensagem anterior se existir
         const oldMessage = this.form.querySelector('.form-message');
         if (oldMessage) {
             oldMessage.remove();
         }
 
         this.form.insertBefore(messageDiv, this.submitButton);
-        
-        // Remove a mensagem após 5 segundos
         setTimeout(() => messageDiv.remove(), 5000);
     }
 
@@ -93,7 +90,6 @@ export class EmailFormManager {
     }
 
     addInputValidation() {
-        // Validação em tempo real
         this.inputs.nome?.addEventListener('input', (e) => {
             const isValid = this.validateName(e.target.value);
             e.target.classList.toggle('invalid', !isValid);
@@ -121,7 +117,6 @@ export class EmailFormManager {
         this.form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            // Sanitiza e valida os dados
             const formData = {
                 nome: this.sanitizeInput(this.inputs.nome.value),
                 email: this.sanitizeInput(this.inputs.email.value),
