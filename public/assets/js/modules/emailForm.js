@@ -10,7 +10,7 @@ export class EmailFormManager {
         
         this.apiUrl = window.location.hostname === 'localhost' 
             ? 'http://localhost:3000' 
-            : 'https://portfolio-my2v.onrender.com/';
+            : 'https://portfolio-yzp5.onrender.com';
     }
 
     validateEmail(email) {
