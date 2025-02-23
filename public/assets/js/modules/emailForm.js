@@ -22,6 +22,10 @@ export class EmailFormManager {
         return name.trim().length >= 3 && !/\d/.test(name);
     }
 
+    validateMessage(message) {
+        return message.trim().length >= 10;
+    }
+
     validateForm(formData) {
         const errors = [];
 
@@ -32,6 +36,11 @@ export class EmailFormManager {
         if (!this.validateEmail(formData.email)) {
             errors.push('Email inválido');
         }
+
+        if (!this.validateMessage(formData.mensagem)) {
+            errors.push('Mensagem deve ter pelo menos 10 caracteres');
+        }
+
         return errors;
     }
 
@@ -77,12 +86,14 @@ export class EmailFormManager {
                 body: JSON.stringify(formData)
             });
 
+            const responseData = await response.json();
+
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+                throw new Error(responseData.errors?.join('\n') || `HTTP error! status: ${response.status}`);
             }
 
-            return await response.json();
+            return responseData;
         } catch (error) {
             console.error('Erro ao enviar formulário:', error);
             throw error;
@@ -134,6 +145,7 @@ export class EmailFormManager {
                 this.showLoadingState();
                 await this.submitForm(formData);
                 this.showMessage('success', 'Mensagem enviada com sucesso!');
+                console.log("Mensagem enviada com sucesso!")
                 this.form.reset();
             } catch (error) {
                 this.showMessage('error', 'Erro ao enviar mensagem. Tente novamente mais tarde.');
