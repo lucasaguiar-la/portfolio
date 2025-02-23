@@ -6,11 +6,11 @@ const THEME = {
 
 const IMAGES = {
     DARK: {
-        LOGO: './assets/images/geral/menu-image.png',
+        LOGO: './assets/images/geral/portfolio-logo-dark.png',
         THEME_ICON: './assets/images/geral/escuro.png'
     },
     LIGHT: {
-        LOGO: './assets/images/geral/menu-image-alt.svg',
+        LOGO: './assets/images/geral/portfolio-logo-ligth.png',
         THEME_ICON: './assets/images/geral/claro.png'
     }
 };
