@@ -6,18 +6,32 @@ export class CardManager {
             {
                 titulo: 'API Weather',
                 imagemSrc: './assets/images/geral/projeto.png',
-                descricao: 'Uma API que carrega os dados do clima atual e salva em um banco de dados Postgres.',
-                linkProjeto: 'https://github.com/lucasaguiar-la/api_Weather'
+                descricao: 'Uma API que carrega os dados do clima atual e salva em um banco de dados PostgreSQL.',
+                linkProjeto: 'https://github.com/lucasaguiar-la/api_Weather',
+                tecnologias: [
+                    { caminho: './assets/images/icones/projetos/python-icon.png', nome: 'Python' },
+                    { caminho: './assets/images/icones/projetos/postgresql-icon.png', nome: 'PostgreSQL' },
+                    { caminho: './assets/images/icones/projetos/docker-icon.png', nome: 'Docker' }
+                ]
             },
         ];
     }
 
-    createCardElement({ titulo, imagemSrc, descricao, linkProjeto, linkCodigo }) {
+    createCardElement({ titulo, imagemSrc, descricao, linkProjeto, tecnologias  }) {
+        const tecnologiasHTML = tecnologias ? tecnologias.map(tech => `
+            <img src="${tech.caminho}" alt="${tech.nome}" class="tech-icon" title="${tech.nome}" loading="lazy">
+        `).join('') : '';
+
         const template = `
             <div class="card-projetos fade-in">
                 <div class="card-titulo">
                     <h3>${titulo}</h3>
-                    <img src="${imagemSrc}" alt="Imagem do projeto ${titulo}" class="card-imagem">
+                    <div class="card-imagem-container">
+                        <img src="${imagemSrc}" alt="Imagem do projeto ${titulo}" class="card-imagem">
+                        <div class="tech-icons-container">
+                            ${tecnologiasHTML}
+                        </div>
+                    </div>
                 </div>
                 <div class="card-descricao">
                     <p>${descricao}</p>
