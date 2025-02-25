@@ -4,18 +4,10 @@ export class CardManager {
         this.cardEmDesenvolvimento = document.getElementById('card-em-desenvolvimento');
         this.projects = [
             {
-                titulo: 'Projeto de Exemplo 1',
-                imagemSrc: './assets/images/geral/exemplo-projeto.png',
-                descricao: 'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
-                linkProjeto: '#',
-                linkCodigo: '#'
-            },
-            {
-                titulo: 'Projeto de Exemplo 2',
-                imagemSrc: './assets/images/geral/exemplo-projeto.png',
-                descricao: 'Um exemplo de descrição extensa, que pode contemplar uma quantidade considerável de texto no card!',
-                linkProjeto: '#',
-                linkCodigo: '#'
+                titulo: 'API Weather',
+                imagemSrc: './assets/images/geral/projeto.png',
+                descricao: 'Uma API que carrega os dados do clima atual e salva em um banco de dados Postgres.',
+                linkProjeto: 'https://github.com/lucasaguiar-la/api_Weather'
             },
         ];
     }
@@ -32,7 +24,6 @@ export class CardManager {
                 </div>
                 <div class="card-botoes">
                     <a href="${linkProjeto}" class="botoes-card" target="_blank" rel="noopener noreferrer">Ver projeto</a>
-                    <a href="${linkCodigo}" class="botoes-card" target="_blank" rel="noopener noreferrer">Ver código</a>
                 </div>
             </div>
         `;
