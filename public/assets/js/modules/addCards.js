@@ -6,12 +6,22 @@ export class CardManager {
             {
                 titulo: 'API Weather',
                 imagemSrc: './assets/images/geral/projeto.png',
-                descricao: 'Uma API que carrega os dados do clima atual e salva em um banco de dados PostgreSQL.',
+                descricao: 'API REST em Python para coleta de dados climáticos, com armazenamento em PostgreSQL.',
                 linkProjeto: 'https://github.com/lucasaguiar-la/api_Weather',
                 tecnologias: [
                     { caminho: './assets/images/icones/projetos/python-icon.png', nome: 'Python' },
                     { caminho: './assets/images/icones/projetos/postgresql-icon.png', nome: 'PostgreSQL' },
                     { caminho: './assets/images/icones/projetos/docker-icon.png', nome: 'Docker' }
+                ]
+            },
+            {
+                titulo: 'ETL GitHub',
+                imagemSrc: './assets/images/geral/projeto.png',
+                descricao: 'Pipeline ETL para análise de dados de repositórios Python no GitHub. Dataset via Kaggle.',
+                linkProjeto: 'https://github.com/lucasaguiar-la/ETL_GitHub',
+                tecnologias: [
+                    { caminho: './assets/images/icones/projetos/python-icon.png', nome: 'Python' },
+                    { caminho: './assets/images/icones/projetos/kaggle-icon.png', nome: 'Kaggle' }
                 ]
             },
         ];
