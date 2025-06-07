@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+const projetosRoutes = require('./routes/projectRoutes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
+app.use('/api/projetos', projetosRoutes);
 
 const createTransporter = () => {
     return nodemailer.createTransport({

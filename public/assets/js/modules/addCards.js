@@ -2,29 +2,17 @@ export class CardManager {
     constructor() {
         this.containerCards = document.querySelector('.container-cards');
         this.cardEmDesenvolvimento = document.getElementById('card-em-desenvolvimento');
-        this.projects = [
-            {
-                titulo: 'API Weather',
-                imagemSrc: './assets/images/geral/projeto.png',
-                descricao: 'API REST em Python para coleta de dados climáticos, com armazenamento em PostgreSQL.',
-                linkProjeto: 'https://github.com/lucasaguiar-la/api_Weather',
-                tecnologias: [
-                    { caminho: './assets/images/icones/projetos/python-icon.png', nome: 'Python' },
-                    { caminho: './assets/images/icones/projetos/postgresql-icon.png', nome: 'PostgreSQL' },
-                    { caminho: './assets/images/icones/projetos/docker-icon.png', nome: 'Docker' }
-                ]
-            },
-            {
-                titulo: 'ETL GitHub',
-                imagemSrc: './assets/images/geral/projeto.png',
-                descricao: 'Pipeline ETL para análise de dados de repositórios Python no GitHub. Dataset via Kaggle.',
-                linkProjeto: 'https://github.com/lucasaguiar-la/ETL_GitHub',
-                tecnologias: [
-                    { caminho: './assets/images/icones/projetos/python-icon.png', nome: 'Python' },
-                    { caminho: './assets/images/icones/projetos/kaggle-icon.png', nome: 'Kaggle' }
-                ]
-            },
-        ];
+        this.projetos = [];
+    }
+
+    async fetchProjetos() {
+        try {
+            const response = await fetch('/api/projetos');
+            const data = await response.json();
+            this.projetos = data;
+        } catch(err) {
+            console.error('Erro ao buscar projetos:', err);
+        }
     }
 
     createCardElement({ titulo, imagemSrc, descricao, linkProjeto, tecnologias  }) {
@@ -75,9 +63,8 @@ export class CardManager {
         observador.observe(card);
     }
 
-    init() {
-        this.projects.forEach(project => {
-            this.addCard(project);
-        });
+    async init() {
+        await this.fetchProjetos();
+        this.projetos.forEach(project => this.addCard(project));
     }
 }
