@@ -89,8 +89,7 @@ export class EmailFormManager {
             const responseData = await response.json();
 
             if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(responseData.errors?.join('\n') || `HTTP error! status: ${response.status}`);
+                throw new Error(responseData.errors?.join('\n') || `Erro no servidor (${response.status})`);
             }
 
             return responseData;
