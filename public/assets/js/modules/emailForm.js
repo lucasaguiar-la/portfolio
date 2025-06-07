@@ -9,8 +9,8 @@ export class EmailFormManager {
         };
         
         this.apiUrl = window.location.hostname === 'localhost' 
-            ? 'http://localhost:3000' 
-            : 'https://portfolio-yzp5.onrender.com';
+            ? 'http://localhost:3000/api/email' 
+            : 'https://portfolio-yzp5.onrender.com/api/email';
     }
 
     validateEmail(email) {
