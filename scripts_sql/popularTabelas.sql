@@ -17,9 +17,9 @@ CREATE TABLE technologies (
 -- Criando a tabela PROJECTS_TECHNOLOGIES
 CREATE TABLE projects_technologies (
     id_project INTEGER NOT NULL,
-    id_tecnologie INTEGER NOT NULL,
+    id_technologie INTEGER NOT NULL,
     FOREIGN KEY (id_project) REFERENCES projects(id_project),
-    FOREIGN KEY (id_tecnologie) REFERENCES technologies(id_technologies)
+    FOREIGN KEY (id_technologie) REFERENCES technologies(id_technologies)
 );
 
 -- Populando a tabela PROJECTS
@@ -46,7 +46,7 @@ INSERT INTO technologies (id_technologies, name, iconsrc) VALUES
 (12, 'NodeJS', './assets/images/icones/projetos/node-icon.png');
 
 -- Populando a tabela PROJECTS_TECHNOLOGIES
-INSERT INTO projects_technologies (id_project, id_tecnologie) VALUES
+INSERT INTO projects_technologies (id_project, id_technologie) VALUES
 (1, 2), (1, 3), (1, 1),
 (2, 1), (2, 4),
 (3, 1), (3, 9), (3, 7),
