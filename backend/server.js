@@ -15,42 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/api/projetos', projetosRoutes);
 
-const createTransporter = () => {
-    return nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
-        }
-    });
-};
-
-const validateEmail = (email) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-};
-
-const validateFormData = (data) => {
-    const { nome, email, mensagem } = data;
-    const errors = [];
-
-    if (!nome || nome.trim().length < 3) {
-        errors.push('Nome inválido');
-    }
-
-    if (!email || !validateEmail(email)) {
-        errors.push('Email inválido');
-    }
-
-    if (!mensagem || mensagem.trim().length < 10) {
-        errors.push('Mensagem muito curta');
-    }
-
-    return errors;
-};
-
 app.post('/submit-form', async (req, res) => {
     try {
         const { nome, email, mensagem } = req.body;
