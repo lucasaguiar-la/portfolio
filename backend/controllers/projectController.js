@@ -24,6 +24,7 @@ exports.getProjetos = async (req, res) => {
             };
         }));
 
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
         res.json(projetosComTecnologias);
     } catch (err){
     console.log(err);
