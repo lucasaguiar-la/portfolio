@@ -75,25 +75,26 @@ h3::after {
 
 .tech-icons-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 25%;
+    left: 15%;
+    width: 200px;
+    height: 100px;
     display: flex;
-    gap: 1rem;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
     border-radius: 10px;
     background: radial-gradient(
         circle,
         #00000088 10%,
         #00000000 50%
     );
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease;
     pointer-events: auto;
 }
-.card-imagem-container:hover .tech-icons-container {
+.card-imagem-container:hover {
     opacity: 1;
 }
 
@@ -101,7 +102,7 @@ h3::after {
     width: 40px;
     height: 40px;
     object-fit: contain;
-    filter: drop-shadow(0 0 4px #ffffffa1);
+    filter: drop-shadow(0 0 4px #ffffff6c);
     transition: transform 0.3s ease;
     pointer-events: auto;
 }
@@ -150,20 +151,10 @@ h3::after {
         #00000088 10%,
         #00000000 50%
     );
-    opacity: 1;
+    opacity: 0.5;
     transition: opacity 0.9s ease;
     object-fit: contain;
     z-index: 10;
-}
-.card-imagem-container:hover .loading-gif {
-    opacity: 0;
-}
-.loading-gif {
-    opacity: 0;
-}
-.card-imagem-container:hover .loading-gif {
-    filter: opacity(60%);
-    opacity: 1;
 }
 
 .card-descricao {
