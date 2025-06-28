@@ -16,7 +16,8 @@ exports.sendEmail = async ({ nome, email, mensagem }) => {
     const transporter = createTransporter();
 
     const mailOptions = {
-        from: email,
+        from: process.env.EMAIL_USER,
+        replyTo: email,
         to: process.env.EMAIL_USER,
         subject: `[PORTFÓLIO] - Nova mensagem de ${nome}!`,
         text: `Nome: ${nome}\nEmail: ${email}\n\nMensagem:\n${mensagem}`,
