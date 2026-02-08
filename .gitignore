@@ -4,6 +4,9 @@ node_modules/
 # Ambiente
 .env
 
+# Testes
+test
+
 # IDEs
 .idea/
 .vscode/
@@ -31,3 +34,6 @@ Desktop.ini
 
 # DB
 drop.sql
+
+# Cloudflare
+cloudflared-linux-amd64.deb

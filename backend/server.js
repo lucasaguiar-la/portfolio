@@ -8,18 +8,21 @@ const projetosRoutes = require('./routes/projectRoutes');
 const emailRoutes = require('./routes/emailRoutes');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api/projetos', projetosRoutes);
 app.use('/api/email', emailRoutes);
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+app.get('/api/health', (req, res) => {
+    res.status(200).json({
+        status: 'ok',
+        uptime: process.uptime(),
+        timestamp: new Date()
+    });
 });
 
 app.listen(port, () => {
