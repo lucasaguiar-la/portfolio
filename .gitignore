@@ -32,8 +32,5 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# DB
-drop.sql
-
 # Cloudflare
 cloudflared-linux-amd64.deb

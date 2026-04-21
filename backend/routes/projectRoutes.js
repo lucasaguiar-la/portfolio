@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getProjetos } = require('../controllers/projectController');
+const {
+    getProjects,
+    createProject
+} = require('../controllers/projectController');
 
-router.get('/', getProjetos);
+router.get('/', getProjects);
+router.post('/', createProject);
 
 module.exports = router;

@@ -1,41 +1,57 @@
 export class CardManager {
     constructor() {
-        this.containerCards = document.querySelector('.container-cards');
-        this.cardEmDesenvolvimento = document.getElementById('card-em-desenvolvimento');
-        this.projetos = [];
+        this.cardsContainer = document.querySelector('.container-cards');
+        this.inDevelopmentCard = document.getElementById('card-em-desenvolvimento');
+        this.projects = [];
+        this.cardObserver = new IntersectionObserver((entries, currentObserver) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('start');
+                    currentObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
     }
 
-    async fetchProjetos() {
+    async fetchProjects() {
         try {
             const response = await fetch('/api/projetos');
+            if (!response.ok) {
+                throw new Error(`Request failed with status ${response.status}`);
+            }
             const data = await response.json();
-            this.projetos = data;
+            this.projects = Array.isArray(data) ? data : [];
         } catch(err) {
-            console.error('Erro ao buscar projetos:', err);
+            console.error('Error fetching projects:', err);
+            this.projects = [];
         }
     }
 
-    createCardElement({ titulo, imagemSrc, descricao, linkProjeto, tecnologias  }) {
-        const tecnologiasHTML = tecnologias ? tecnologias.map(tech => `
-            <img src="${tech.caminho}" alt="${tech.nome}" class="tech-icon" title="${tech.nome}" loading="lazy">
+    createCardElement({ title, imageUrl, description, githubUrl, liveUrl, technologies }, index) {
+        const techIconsHtml = technologies ? technologies.map((tech) => `
+            <img src="${tech.iconUrl}" alt="${tech.name}" class="tech-icon" title="${tech.name}" loading="lazy">
         `).join('') : '';
+        const projectLink = liveUrl || githubUrl || '#projetos';
+        const imageLoading = index < 3 ? 'eager' : 'lazy';
 
         const template = `
             <div class="card-projetos fade-in">
                 <div class="card-titulo">
-                    <h3>${titulo}</h3>
+                    <h3>${title}</h3>
                     <div class="card-imagem-container">
-                        <img src="${imagemSrc}" alt="Imagem do projeto ${titulo}" class="card-imagem">
+                        <img src="${imageUrl}" alt="Project image ${title}" class="card-imagem" loading="${imageLoading}" decoding="async">
                         <div class="tech-icons-container">
-                            ${tecnologiasHTML}
+                            ${techIconsHtml}
                         </div>
                     </div>
                 </div>
                 <div class="card-descricao">
-                    <p>${descricao}</p>
+                    <p>${description}</p>
                 </div>
                 <div class="card-botoes">
-                    <a href="${linkProjeto}" class="botoes-card" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                    <a href="${projectLink}" class="botoes-card" target="_blank" rel="noopener noreferrer">Ver projeto</a>
                 </div>
             </div>
         `;
@@ -45,26 +61,22 @@ export class CardManager {
         return card.firstElementChild;
     }
 
-    addCard(projectData) {
-        const card = this.createCardElement(projectData);
-        this.containerCards.insertBefore(card, this.cardEmDesenvolvimento);
+    addCard(projectData, index, fragment) {
+        const card = this.createCardElement(projectData, index);
+        this.cardObserver.observe(card);
 
-        const observador = new IntersectionObserver((entrada, observador) => {
-            entrada.forEach(entrada => {
-                if (entrada.isIntersecting) {
-                    entrada.target.classList.add("start");
-                    observador.unobserve(entrada.target);
-                }
-            });
-        }, {
-            threshold: 0.5
-        });
+        if (fragment) {
+            fragment.appendChild(card);
+            return;
+        }
 
-        observador.observe(card);
+        this.cardsContainer.insertBefore(card, this.inDevelopmentCard);
     }
 
     async init() {
-        await this.fetchProjetos();
-        this.projetos.forEach(project => this.addCard(project));
+        await this.fetchProjects();
+        const fragment = document.createDocumentFragment();
+        this.projects.forEach((project, index) => this.addCard(project, index, fragment));
+        this.cardsContainer.insertBefore(fragment, this.inDevelopmentCard);
     }
 }
