@@ -4,7 +4,7 @@ Bem-vindo ao meu portfólio! Aqui você encontrará uma coleção de projetos qu
 
 ## Imagens
 <div style="max-width: 600px; overflow: hidden;">
-  <img src="./public/assets/images/geral/readme.png" alt="Imagem-Portfólio" style="width: 80%; height: auto;">
+  <img src="./public/assets/images/geral/readme.png" alt="Imagem-Portfólio" style="width: 100%; height: auto;">
 </div>
 
 
@@ -12,7 +12,7 @@ Bem-vindo ao meu portfólio! Aqui você encontrará uma coleção de projetos qu
 
 Para visualizar o site portifólio, basta acessar o link abaixo e dar uma olhada:
 
-[lucasaguiar.online](http://#)
+[lucasaguiar.online](https://lucasaguiar.online)
 
 ## Contato
 
