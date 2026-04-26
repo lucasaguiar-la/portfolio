@@ -3,6 +3,8 @@ export class CardManager {
         this.cardsContainer = document.querySelector('.container-cards');
         this.inDevelopmentCard = document.getElementById('card-em-desenvolvimento');
         this.projects = [];
+        this.skeletonCards = [];
+        this.skeletonCount = 3;
         this.cardObserver = new IntersectionObserver((entries, currentObserver) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -13,6 +15,38 @@ export class CardManager {
         }, {
             threshold: 0.5
         });
+    }
+
+    createSkeletonCard() {
+        const skeleton = document.createElement('div');
+        skeleton.className = 'card-projetos card-skeleton';
+        skeleton.setAttribute('aria-hidden', 'true');
+        skeleton.innerHTML = `
+            <div class="skeleton-title skeleton-shimmer"></div>
+            <div class="skeleton-image skeleton-shimmer"></div>
+            <div class="skeleton-text skeleton-shimmer"></div>
+            <div class="skeleton-button skeleton-shimmer"></div>
+        `.trim();
+
+        return skeleton;
+    }
+
+    renderSkeletonCards() {
+        if (!this.cardsContainer || !this.inDevelopmentCard) return;
+
+        const fragment = document.createDocumentFragment();
+        for (let index = 0; index < this.skeletonCount; index += 1) {
+            const skeleton = this.createSkeletonCard();
+            this.skeletonCards.push(skeleton);
+            fragment.appendChild(skeleton);
+        }
+
+        this.cardsContainer.insertBefore(fragment, this.inDevelopmentCard);
+    }
+
+    removeSkeletonCards() {
+        this.skeletonCards.forEach((skeleton) => skeleton.remove());
+        this.skeletonCards = [];
     }
 
     async fetchProjects() {
@@ -74,9 +108,15 @@ export class CardManager {
     }
 
     async init() {
-        await this.fetchProjects();
-        const fragment = document.createDocumentFragment();
-        this.projects.forEach((project, index) => this.addCard(project, index, fragment));
-        this.cardsContainer.insertBefore(fragment, this.inDevelopmentCard);
+        this.renderSkeletonCards();
+
+        try {
+            await this.fetchProjects();
+            const fragment = document.createDocumentFragment();
+            this.projects.forEach((project, index) => this.addCard(project, index, fragment));
+            this.cardsContainer.insertBefore(fragment, this.inDevelopmentCard);
+        } finally {
+            this.removeSkeletonCards();
+        }
     }
 }
