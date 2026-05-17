@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Arquitetura — lucasaguiar.online</title>
+        <link rel="stylesheet" href="../css/architecture/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;800&display=swap"
+            rel="stylesheet"
+        />
+
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <a href="../../index.html" class="go-back-btn">< Voltar</a>
+                <div class="breadcrumb">
+                    lucasaguiar.online <span>/</span> sistema
+                    <span>/</span> arquitetura
+                </div>
+                <h1>Arquitetura do <em>Sistema</em></h1>
+                <p class="subtitle">
+                    Stack self-hosted em servidor Ubuntu doméstico, exposto via
+                    Cloudflare Tunnel. Servidor
+                    <strong style="color: #fff">stateless</strong> — dados
+                    persistidos em PostgreSQL serverless no Neon, gerenciado
+                    externamente na cloud.
+                </p>
+                <div class="tech-row">
+                    <span class="tech-pill active">Cloudflare Tunnel</span>
+                    <span class="tech-pill active">Nginx</span>
+                    <span class="tech-pill active">Node.js</span>
+                    <span class="tech-pill active">PM2</span>
+                    <span class="tech-pill active">Docker</span>
+                    <span class="tech-pill">Ubuntu Server</span>
+                    <span class="tech-pill">Git</span>
+                    <span class="tech-pill db">PostgreSQL</span>
+                    <span class="tech-pill db">Neon</span>
+                </div>
+            </header>
+
+            <!-- ═══ 01 ARCHITECTURE ═══ -->
+            <section class="section">
+                <div class="section-label">
+                    <span class="num">01</span>
+                    <h2>Diagrama de Arquitetura</h2>
+                    <span class="desc">componentes e conexões</span>
+                </div>
+                <div class="diagram-card">
+                    <div class="card-header">
+                        <div class="dot r"></div>
+                        <div class="dot y"></div>
+                        <div class="dot g"></div>
+                        <span class="card-title"
+                            >architecture-overview.svg</span
+                        >
+                    </div>
+                    <div class="card-body">
+                        <div class="arch-layout">
+                            <!-- left: main flow -->
+                            <div class="arch-stack">
+                                <div class="arch-node node-user">
+                                    <div class="node-left">
+                                        <span class="icon">🌐</span>
+                                        <div>
+                                            <div class="label">Usuário</div>
+                                            <div class="sublabel">
+                                                browser / curl
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge">CLIENT</span>
+                                </div>
+                                <div class="arch-arrow">
+                                    <div class="line"></div>
+                                    <div class="tip"></div>
+                                </div>
+
+                                <div class="arch-node node-cf">
+                                    <div class="node-left">
+                                        <span class="icon">☁️</span>
+                                        <div>
+                                            <div class="label">Cloudflare</div>
+                                            <div class="sublabel">
+                                                CDN · DDoS · SSL
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge">EDGE</span>
+                                </div>
+                                <div class="arch-arrow">
+                                    <div class="line"></div>
+                                    <div class="tip"></div>
+                                </div>
+
+                                <div class="arch-node node-tunnel">
+                                    <div class="node-left">
+                                        <span class="icon">🔒</span>
+                                        <div>
+                                            <div class="label">
+                                                Cloudflare Tunnel
+                                            </div>
+                                            <div class="sublabel">
+                                                cloudflared · sem portas abertas
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge">TUNNEL</span>
+                                </div>
+                                <div class="arch-arrow">
+                                    <div class="line"></div>
+                                    <div class="tip"></div>
+                                </div>
+
+                                <div class="arch-node node-nginx">
+                                    <div class="node-left">
+                                        <span class="icon">⚡</span>
+                                        <div>
+                                            <div class="label">Nginx</div>
+                                            <div class="sublabel">
+                                                reverse proxy local
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge">PROXY</span>
+                                </div>
+                                <div class="arch-arrow">
+                                    <div class="line"></div>
+                                    <div class="tip"></div>
+                                </div>
+
+                                <div class="arch-node node-api">
+                                    <div class="node-left">
+                                        <span class="icon">🟢</span>
+                                        <div>
+                                            <div class="label">Node.js API</div>
+                                            <div class="sublabel">
+                                                PM2 · porta 4000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge">BACKEND</span>
+                                </div>
+                            </div>
+
+                            <!-- right: db column (aligned with Node row) -->
+                            <div class="arch-db-col">
+                                <div class="db-conn-label">
+                                    saída internet<br />independente
+                                </div>
+                                <div class="bidir">
+                                    <div class="bidir-arrow-head up"></div>
+                                    <div class="bidir-line-v"></div>
+                                    <div class="bidir-arrow-head down"></div>
+                                </div>
+                                <div class="bidir-tag">SSL · :5432</div>
+                                <div style="height: 12px"></div>
+                                <div class="db-node">
+                                    <div class="db-icon">🐘</div>
+                                    <div class="db-label">Neon</div>
+                                    <div class="db-sub">
+                                        PostgreSQL serverless<br />neon.tech ·
+                                        cloud
+                                    </div>
+                                    <div class="db-tag">DATABASE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ 02 REQUEST FLOW ═══ -->
+            <section class="section">
+                <div class="section-label">
+                    <span class="num">02</span>
+                    <h2>Fluxo de Request</h2>
+                    <span class="desc">do browser ao servidor e volta</span>
+                </div>
+                <div class="diagram-card">
+                    <div class="card-header">
+                        <div class="dot r"></div>
+                        <div class="dot y"></div>
+                        <div class="dot g"></div>
+                        <span class="card-title">request-flow.svg</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="flow-wrap">
+                            <div class="flow-step fc-blue">
+                                <div class="flow-spine">
+                                    <div class="dot-outer">01</div>
+                                    <div class="vline"></div>
+                                </div>
+                                <div class="flow-content">
+                                    <div class="fc-title">
+                                        Usuário acessa lucasaguiar.online
+                                    </div>
+                                    <div class="fc-sub">
+                                        Request HTTPS sai do browser
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flow-step fc-orange">
+                                <div class="flow-spine">
+                                    <div class="dot-outer">02</div>
+                                    <div class="vline"></div>
+                                </div>
+                                <div class="flow-content">
+                                    <div class="fc-title">
+                                        Cloudflare recebe o request
+                                    </div>
+                                    <div class="fc-sub">
+                                        SSL termination, CDN cache, proteção
+                                        DDoS
+                                    </div>
+                                    <span
+                                        class="fc-tag"
+                                        style="
+                                            background: rgba(255, 107, 53, 0.1);
+                                            color: #ff9066;
+                                            border: 1px solid
+                                                rgba(255, 107, 53, 0.2);
+                                        "
+                                        >HTTPS :443</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="flow-step fc-orange">
+                                <div class="flow-spine">
+                                    <div class="dot-outer">03</div>
+                                    <div class="vline"></div>
+                                </div>
+                                <div class="flow-content">
+                                    <div class="fc-title">
+                                        Tunnel encaminha para o servidor local
+                                    </div>
+                                    <div class="fc-sub">
+                                        Cloudflared — nenhuma porta aberta no
+                                        roteador
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flow-step fc-green">
+                                <div class="flow-spine">
+                                    <div class="dot-outer">04</div>
+                                    <div class="vline"></div>
+                                </div>
+                                <div class="flow-content">
+                                    <div class="fc-title">
+                                        Nginx roteia na porta 80
+                                    </div>
+                                    <div class="fc-sub">
+                                        Decisão baseada no path da URL
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fork-block">
+                                <div class="fork-item api">
+                                    <div class="fi-label">/api/*</div>
+                                    <div class="fi-val">
+                                        → Node.js :4000<br />REST API
+                                    </div>
+                                </div>
+                                <div class="fork-item html">
+                                    <div class="fi-label">/*</div>
+                                    <div class="fi-val">
+                                        → Frontend HTML<br />Arquivos estáticos
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flow-step fc-purple">
+                                <div class="flow-spine">
+                                    <div class="dot-outer">05</div>
+                                    <div class="vline"></div>
+                                </div>
+                                <div class="flow-content">
+                                    <div class="fc-title">
+                                        Node consulta o Neon
+                                        <span
+                                            style="
+                                                color: var(--muted);
+                                                font-weight: 400;
+                                            "
+                                            >(quando /api)</span
+                                        >
+                                    </div>
+                                    <div class="fc-sub">
+                                        Conexão de saída SSL para neon.tech ·
+                                        resposta retorna ao Node
+                                    </div>
+                                    <span
+                                        class="fc-tag"
+                                        style="
+                                            background: rgba(
+                                                167,
+                                                139,
+                                                250,
+                                                0.1
+                                            );
+                                            color: var(--neon-db);
+                                            border: 1px solid
+                                                rgba(167, 139, 250, 0.2);
+                                        "
+                                        >OUTBOUND</span
+                                    >
+                                    <span
+                                        class="fc-tag"
+                                        style="
+                                            background: rgba(
+                                                167,
+                                                139,
+                                                250,
+                                                0.1
+                                            );
+                                            color: var(--neon-db);
+                                            border: 1px solid
+                                                rgba(167, 139, 250, 0.2);
+                                        "
+                                        >SSL :5432</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="db-sidenote">
+                                <div class="dsn-icon">💡</div>
+                                <div class="dsn-text">
+                                    Esse caminho é
+                                    <strong>independente</strong> do fluxo do
+                                    usuário. O Node faz a query para fora
+                                    (internet → Neon) e aguarda a resposta antes
+                                    de retornar ao cliente. O Cloudflare Tunnel
+                                    <strong>não participa</strong> dessa etapa.
+                                </div>
+                            </div>
+
+                            <div class="flow-step fc-green">
+                                <div class="flow-spine">
+                                    <div class="dot-outer">06</div>
+                                </div>
+                                <div class="flow-content">
+                                    <div class="fc-title">
+                                        Resposta retorna pelo caminho principal
+                                    </div>
+                                    <div class="fc-sub">
+                                        Node / HTML → Nginx → Tunnel →
+                                        Cloudflare → Usuário
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ 03 DEPLOY ═══ -->
+            <section class="section">
+                <div class="section-label">
+                    <span class="num">03</span>
+                    <h2>Pipeline de Deploy</h2>
+                    <span class="desc">do git ao ar</span>
+                </div>
+                <div class="diagram-card">
+                    <div class="card-header">
+                        <div class="dot r"></div>
+                        <div class="dot y"></div>
+                        <div class="dot g"></div>
+                        <span class="card-title">deploy-pipeline.svg</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="deploy-two">
+                            <div class="deploy-main">
+                                <div
+                                    class="deploy-node"
+                                    style="
+                                        border-color: rgba(255, 255, 255, 0.1);
+                                    "
+                                >
+                                    <strong>📁 Código (Git)</strong>
+                                    push para branch principal
+                                </div>
+                                <div class="deploy-arr">
+                                    <div class="dl"></div>
+                                    <div class="dt"></div>
+                                </div>
+
+                                <div class="deploy-node server">
+                                    <strong>🖥️ Servidor Ubuntu</strong>
+                                    pull manual · ~/projects/portfolio
+                                </div>
+                                <div class="deploy-arr">
+                                    <div class="dl"></div>
+                                    <div class="dt"></div>
+                                </div>
+
+                                <div class="pm2-branch">
+                                    <div class="pm2-title">
+                                        PM2 — Process Manager
+                                    </div>
+                                    <div class="pm2-items">
+                                        <div class="pm2-item">
+                                            <span class="pi-name"
+                                                >Node API</span
+                                            >
+                                            <span class="pi-port"
+                                                >:4000 · lê DATABASE_URL do
+                                                .env</span
+                                            >
+                                        </div>
+                                        <div class="pm2-item">
+                                            <span class="pi-name"
+                                                >Cloudflared</span
+                                            >
+                                            <span class="pi-port"
+                                                >tunnel daemon</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="deploy-arr">
+                                    <div class="dl"></div>
+                                    <div class="dt"></div>
+                                </div>
+
+                                <div class="deploy-node nginx">
+                                    <strong>⚡ Nginx</strong>
+                                    já configurado · reload se necessário
+                                </div>
+                                <div class="deploy-arr">
+                                    <div class="dl"></div>
+                                    <div class="dt"></div>
+                                </div>
+
+                                <div class="deploy-node cf-out">
+                                    <strong style="color: #ff9066"
+                                        >☁️ Sistema disponível via
+                                        Cloudflare</strong
+                                    >
+                                    lucasaguiar.online · HTTPS · global
+                                </div>
+                            </div>
+
+                            <!-- side: Neon is outside the deploy cycle -->
+                            <div class="deploy-side">
+                                <div class="deploy-side-note">
+                                    fora do ciclo<br />de deploy
+                                </div>
+                                <div
+                                    style="
+                                        width: 2px;
+                                        height: 20px;
+                                        background: rgba(167, 139, 250, 0.2);
+                                        margin: 0 auto 8px;
+                                    "
+                                ></div>
+                                <div
+                                    class="deploy-node db-out"
+                                    style="text-align: center"
+                                >
+                                    <strong>🐘 Neon</strong>
+                                    PostgreSQL managed<br />
+                                    <span
+                                        style="
+                                            font-size: 10px;
+                                            color: var(--muted);
+                                        "
+                                        >migrations separadas<br />drizzle /
+                                        prisma</span
+                                    >
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--mono);
+                                        font-size: 9px;
+                                        color: var(--muted);
+                                        text-align: center;
+                                        margin-top: 10px;
+                                        line-height: 1.7;
+                                    "
+                                >
+                                    schema evolui<br />independente<br />do
+                                    código
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="footer-note">
+                <strong>Sobre a adição do banco externo:</strong>
+                O servidor Ubuntu torna-se <span class="hl">stateless</span> —
+                processa requests mas não armazena dados. O
+                <span class="hl">Neon</span> fornece PostgreSQL serverless via
+                conexão SSL de saída (porta 5432); a
+                <code>DATABASE_URL</code> fica em variável de ambiente e nunca
+                vai ao Git. O Cloudflare Tunnel
+                <strong>não participa</strong> do caminho Node ↔ Neon — essa é
+                uma conexão direta do servidor para a internet. Migrations de
+                schema são executadas separadamente do deploy.
+            </div>
+        </div>
+    </body>
+</html>
