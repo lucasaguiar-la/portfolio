@@ -1,6 +1,6 @@
 # Meu Portfólio
 
-Bem-vindo ao meu portfólio! Aqui você encontrará uma coleção de projetos que desenvolvi, demonstrando minhas habilidades em programação e desenvolvimento de software.
+Bem-vindo ao meu portfólio! Aqui você encontrará uma coleção de projetos que desenvolvi, demonstrando minhas habilidades em desenvolvimento de software, automações e DevOps.
 
 ## Imagens
 <div style="max-width: 600px; overflow: hidden;">
